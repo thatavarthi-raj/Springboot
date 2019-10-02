@@ -1,0 +1,50 @@
+{
+	"variables": [],
+	"info": {
+		"name": "spring-boot-actuator",
+		"_postman_id": "e7dea259-023d-4974-6b52-a2189d68d50e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "actuator",
+			"request": {
+				"url": "http://localhost:9091/actuator",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "health",
+			"request": {
+				"url": "http://localhost:9091/actuator/health",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "actuator-info",
+			"request": {
+				"url": "http://localhost:9091/actuator/info",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

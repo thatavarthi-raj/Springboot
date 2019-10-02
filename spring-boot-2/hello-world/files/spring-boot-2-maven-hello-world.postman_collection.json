@@ -1,0 +1,22 @@
+{
+	"variables": [],
+	"info": {
+		"name": "spring-boot-2-maven-hello-world",
+		"_postman_id": "fbc0dabc-38f5-11eb-f9e1-b3ac69b5c3b3",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "hello",
+			"request": {
+				"url": "http://localhost:8082/hello",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
