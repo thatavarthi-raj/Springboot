@@ -18,9 +18,16 @@ gradle init --type pom
 * org.projectlombok:lombok
 
 ## Description
+* Actuator is enabled with dependency **spring-boot-starter-actuator**
 * Actuator end points
 * Import **files/spring-boot-actuator.postman_collection.json** to postman to execute actuator end points
 * **[References](#References)** to see full list of end points
+
+## Custom actuator end points
+* Implement **org.springframework.boot.actuate.health.HealthIndicator**
+* Override health() method
+* Refer **spring.boot.actuator.custom.actuators.AppHealthIndicator**
+* Open url **http://localhost:9091/actuator/health**
 
 ## References
 * [DZone](https://dzone.com/articles/spring-boot-actuator-in-spring-boot-20)
