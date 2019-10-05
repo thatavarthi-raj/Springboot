@@ -17,6 +17,14 @@ gradle init --type pom
 ## Dependencies
 * org.springframework:spring-boot-starter-web:2.1.8.RELEASE
 
+## Steps
+* Create **application.properties** file in src/main/resources
+* Create **application-dev.properties** file in src/main/resources
+* Create **application-test.properties** file in src/main/resources
+* Create **application-prod.properties** file in src/main/resources
+* Add **spring.profiles.active=prod** in application.properties
+* Based on property above respective **application-{profile}.properties** will picked by spring boot
+
 ## Run this project
 * Import project into IDE as Maven or Gradle project
 * Execute **spring.boot.profiles.App**
