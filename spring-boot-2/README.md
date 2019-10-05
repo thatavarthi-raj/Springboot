@@ -3,6 +3,7 @@
 * [Hello World Using Spring Initializer](hello-world-using-spring-initializer)
 * [Hello World using Spring cli](hello-world-using-spring-cli)
 * [Spring Boot 2 Actuator](spring-boot-actuator)
+* [Spring Boot Profiles](profiles)
 * [Rest API](rest-api)
 * [Dockerize with Dockerfile](docker-image-with-docker-file)
 * [Spring Boot 2 maven integartion with sonarqube running with mysql](spring-boot-sonarqube)
