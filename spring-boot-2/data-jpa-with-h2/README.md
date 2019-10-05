@@ -26,7 +26,6 @@ gradle init --type pom
 ## Default H2 database details if we do not give any in application.properties
 ```
 spring.datasource.url=jdbc:h2:mem:testdb
-#spring.datasource.url=jdbc:h2:file:E:/practice-projects/spring-boot-1/data-jpa-h2/db;MV_STORE=FALSE
 spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
 spring.datasource.password=
@@ -39,6 +38,10 @@ spring.datasource.url=jdbc:h2:mem:spring-boot-data-jpa-h2
 spring.h2.console.enabled=true
 spring.h2.console.path=/h2
 ```
+
+## To use file based H2 DB
+* spring.datasource.url=jdbc:h2:file:{path}/{db-name};MV_STORE=FALSE
+* spring.datasource.url=jdbc:h2:file:E:/practice-projects/spring-boot-1/data-jpa-h2/db;MV_STORE=FALSE
 
 ## Classes
 * Employee
