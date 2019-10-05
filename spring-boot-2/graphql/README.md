@@ -75,7 +75,7 @@ java -jar build/libs/graphql.jar
 ```
 
 ## Some GraphQl queries and responses
-* Query
+1. Query
 ```
 {
   findAllApplications{
@@ -86,7 +86,7 @@ java -jar build/libs/graphql.jar
   }
 }
 ```
-* Response
+Response
 ```
 {
   "data": {
@@ -114,7 +114,7 @@ java -jar build/libs/graphql.jar
 }
 ```
 
-* Query
+2. Query
 ```
 {
   findAllApplications{
@@ -123,7 +123,7 @@ java -jar build/libs/graphql.jar
   }
 }
 ```
-* Response
+Response
 ```
 {
   "data": {
