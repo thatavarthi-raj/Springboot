@@ -6,7 +6,7 @@
 * [Spring Boot Profiles](profiles)
 * [Rest API](rest-api)
 * [Dockerize with Dockerfile](docker-image-with-docker-file)
-* [Spring Boot 2 maven integartion with sonarqube running with mysql](spring-boot-sonarqube)
+* [Spring Boot 2 Maven Integartion with Sonarqube Running with MySql](spring-boot-sonarqube)
 * [Spring Data JPA with H2 Database](data-jpa-with-h2)
 * [Spring Boot 2 integration with lomobok](lombok)
 * [Spring Boot 2 Circle CI Integration](circle-ci)
