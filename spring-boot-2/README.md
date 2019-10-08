@@ -18,3 +18,4 @@
 * [Global Exception Handling with Hibernate Validation](global-exception-handling-with-hibenate-validator)
 * [GraphQl](graphql)
 * [Unit Testing](unit-testing)
+* [Docker image with maven plugin](docker-with-maven-pugin)

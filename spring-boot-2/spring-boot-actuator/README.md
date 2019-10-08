@@ -33,3 +33,11 @@ gradle init --type pom
 * [DZone](https://dzone.com/articles/spring-boot-actuator-in-spring-boot-20)
 * [Baeldung](https://www.baeldung.com/spring-boot-actuators)
 * [All available actuator end points](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html)
+
+## End Points
+* /acutator
+* /health
+* /autoconfig
+* /beans
+* /configprops
+* /dump
