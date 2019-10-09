@@ -1,0 +1,22 @@
+{
+	"variables": [],
+	"info": {
+		"name": "data-jpa-mysql",
+		"_postman_id": "d09cf179-0e20-fc9b-4948-04778397ec5b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "find-all-employees",
+			"request": {
+				"url": "http://localhost:9090/employees",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
