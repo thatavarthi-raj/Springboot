@@ -17,3 +17,6 @@ mvn archetype:generate -DgroupId=data.jpa.mysql -DartifactId=data-jpa-mysql -Dve
 ```
 gradle init --type pom
 ```
+
+## References
+* [Spring data examples jpa](https://github.com/spring-projects/spring-data-examples/tree/master/jpa/jpa21)
