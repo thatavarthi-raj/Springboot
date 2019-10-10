@@ -47,13 +47,12 @@ gradle init --type pom
 ## Execute Stored Procedure With One In Param Multiple Out Params
 * Create stored procedure **find_employee_by_dept_id** - Refer **db/stored-procedures.sql**
 * Declare **javax.persistence.NamedStoredProcedureQueries** annotation on **Employee.java** with name **Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_NAME**
-* Result set mapping with name **Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_RESULT_SET_MAPPING**. This is used to return **List<EmployeeModel>**
+* Result set mapping with name **Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_RESULT_SET_MAPPING**. This is used to return **List&lt;EmployeeModel&gt;**
 * Refer API
- 
 ```
 /employees/dept/{id}
 ```
-
+* API Method
 ```
 EmployeeController.findAllEmployeesByDeptId(@PathVariable("id") Integer deptId)
 ```
