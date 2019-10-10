@@ -7,4 +7,6 @@ import data.jpa.mysql.entity.Employee;
 public interface CustomEmployeeRespository {
 
 	List<Employee> findAllEmployees();
+
+	List<Employee> findAllEmployeesByDeptId(Integer deptId);
 }

@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedStoredProcedureQueries;
 import javax.persistence.NamedStoredProcedureQuery;
 import javax.persistence.SqlResultSetMapping;
+import javax.persistence.SqlResultSetMappings;
 import javax.persistence.Table;
 
 import data.jpa.mysql.model.EmployeeModel;
@@ -27,15 +28,39 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "EMP")
-@SqlResultSetMapping(name = "findAllEmployees", classes = @ConstructorResult(targetClass = EmployeeModel.class, columns = {
-		@ColumnResult(name = "empno", type = Integer.class), @ColumnResult(name = "ename", type = String.class),
-		@ColumnResult(name = "job", type = String.class), @ColumnResult(name = "sal", type = Long.class),
-		@ColumnResult(name = "comm", type = Long.class), @ColumnResult(name = "mgr", type = Integer.class),
-		@ColumnResult(name = "hiredate", type = Date.class), @ColumnResult(name = "deptno", type = Integer.class),
-		@ColumnResult(name = "dname", type = String.class), @ColumnResult(name = "loc", type = String.class) }))
+// @formatter:off
+
+@SqlResultSetMappings({
+	@SqlResultSetMapping(name = Constants.FIND_ALL_EMPLOYEES_RESULT_SET_MAPPING, classes = @ConstructorResult(targetClass = EmployeeModel.class, columns = {
+			@ColumnResult(name = "empno", type = Integer.class), @ColumnResult(name = "ename", type = String.class),
+			@ColumnResult(name = "job", type = String.class), @ColumnResult(name = "sal", type = Long.class),
+			@ColumnResult(name = "comm", type = Long.class), @ColumnResult(name = "mgr", type = Integer.class),
+			@ColumnResult(name = "hiredate", type = Date.class), @ColumnResult(name = "deptno", type = Integer.class),
+			@ColumnResult(name = "dname", type = String.class), @ColumnResult(name = "loc", type = String.class) })
+	),
+	
+	@SqlResultSetMapping(
+				name = Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_RESULT_SET_MAPPING, 
+				classes = @ConstructorResult(targetClass = EmployeeModel.class, columns = {
+				@ColumnResult(name = "empno", type = Integer.class), @ColumnResult(name = "ename", type = String.class),
+				@ColumnResult(name = "job", type = String.class), @ColumnResult(name = "sal", type = Long.class),
+				@ColumnResult(name = "comm", type = Long.class), @ColumnResult(name = "mgr", type = Integer.class),
+				@ColumnResult(name = "hiredate", type = Date.class), @ColumnResult(name = "deptno", type = Integer.class),
+				@ColumnResult(name = "dname", type = String.class), @ColumnResult(name = "loc", type = String.class) })
+			)
+})
 @NamedStoredProcedureQueries({
-		@NamedStoredProcedureQuery(name = Constants.FIND_ALL_EMPLOYEES, procedureName = "find_all_employees", resultSetMappings = {
-				"findAllEmployees" }) })
+		@NamedStoredProcedureQuery(
+				name = Constants.FIND_ALL_EMPLOYEES_NAME, 
+				procedureName = Constants.FIND_ALL_EMPLOYEES_SP, 
+				resultSetMappings = {Constants.FIND_ALL_EMPLOYEES_RESULT_SET_MAPPING }),
+		
+		@NamedStoredProcedureQuery(
+				name = Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_NAME, 
+				procedureName = Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_SP,
+				resultSetMappings = { Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_RESULT_SET_MAPPING }) 
+		})
+// @formatter:on
 public class Employee {
 
 	@Id

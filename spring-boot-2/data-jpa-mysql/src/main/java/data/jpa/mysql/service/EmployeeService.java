@@ -19,4 +19,10 @@ public class EmployeeService {
 
 		return employeesList;
 	}
+
+	public List<Employee> findAllEmployeesByDeptId(Integer deptId) {
+		List<Employee> employeesList = employeeRepository.findAllEmployeesByDeptId(deptId);
+
+		return employeesList;
+	}
 }

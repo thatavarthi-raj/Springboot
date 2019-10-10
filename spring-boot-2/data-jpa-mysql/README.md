@@ -32,7 +32,8 @@ gradle init --type pom
 * SalaryGrade
 
 ## Examples
-* [Execute stored procedure returns multiple columns and return model list - 0 in params, n out params](#execute-stored-procedure-returns-multiple-columns-and-return-model-list)
+* [Execute stored procedure - 0 in params, n out params](#execute-stored-procedure-returns-multiple-columns-and-return-model-list)
+* [Execute stored procedure - 1 in param, n out params](#execute-stored-procedure-with-one-in-param-multiple-out-params)
 
 ### Execute stored procedure returns multiple columns and return model list
 * Create stored procedure **find_all_employees** - Refer **db/stored-procedures.sql**
@@ -42,6 +43,20 @@ gradle init --type pom
 * Create implementation class - **data.jpa.mysql.repository.EmployeeRepositoryImpl**
 * Inject **EntityManager** to **data.jpa.mysql.repository.EmployeeRepositoryImpl** using annotation **javax.persistence.PersistenceContext**
 * Execute stored procedure - **data.jpa.mysql.repository.EmployeeRepositoryImpl.findAllEmployees()**
+
+## Execute Stored Procedure With One In Param Multiple Out Params
+* Create stored procedure **find_employee_by_dept_id** - Refer **db/stored-procedures.sql**
+* Declare **javax.persistence.NamedStoredProcedureQueries** annotation on **Employee.java** with name **Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_NAME**
+* Result set mapping with name **Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_RESULT_SET_MAPPING**. This is used to return **List<EmployeeModel>**
+* Refer API
+ 
+```
+/employees/dept/{id}
+```
+
+```
+EmployeeController.findAllEmployeesByDeptId(@PathVariable("id") Integer deptId)
+```
 
 ## References
 * [Spring data examples jpa](https://github.com/spring-projects/spring-data-examples/tree/master/jpa/jpa21)
