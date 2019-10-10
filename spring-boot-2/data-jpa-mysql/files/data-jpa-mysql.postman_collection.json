@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "data-jpa-mysql",
-		"_postman_id": "d09cf179-0e20-fc9b-4948-04778397ec5b",
+		"_postman_id": "ac3f7c27-33dc-3cf9-d3df-0d09ed48466c",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -11,6 +11,20 @@
 			"name": "find-all-employees",
 			"request": {
 				"url": "http://localhost:9090/employees",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "find-all-employees-by-dept-id",
+			"request": {
+				"url": "http://localhost:9090/employees/dept/10",
 				"method": "GET",
 				"header": [],
 				"body": {},
