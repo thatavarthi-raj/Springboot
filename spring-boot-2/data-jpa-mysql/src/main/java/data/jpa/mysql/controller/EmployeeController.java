@@ -27,4 +27,9 @@ public class EmployeeController {
 	public List<Employee> findAllEmployeesByDeptId(@PathVariable("id") Integer deptId) {
 		return employeeService.findAllEmployeesByDeptId(deptId);
 	}
+
+	@GetMapping(value = "/employees-depts", produces = APPLICATION_JSON_VALUE)
+	public Object findAllEmployeesAndDepartments() {
+		return employeeService.findAllEmployeesAndDepartments();
+	}
 }

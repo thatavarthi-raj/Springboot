@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "data-jpa-mysql",
-		"_postman_id": "ac3f7c27-33dc-3cf9-d3df-0d09ed48466c",
+		"_postman_id": "8acfc86b-3474-befd-dbbb-8a5f4f08a727",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -27,7 +27,24 @@
 				"url": "http://localhost:9090/employees/dept/10",
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "find-all-employees-and-departments",
+			"request": {
+				"url": "http://localhost:9090/employees-depts",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []

@@ -15,6 +15,8 @@ import javax.persistence.SqlResultSetMapping;
 import javax.persistence.SqlResultSetMappings;
 import javax.persistence.Table;
 
+import data.jpa.mysql.model.DepartmentModel;
+import data.jpa.mysql.model.EmployeeDeptModel;
 import data.jpa.mysql.model.EmployeeModel;
 import data.jpa.mysql.util.Constants;
 import lombok.AllArgsConstructor;
@@ -31,23 +33,41 @@ import lombok.NoArgsConstructor;
 // @formatter:off
 
 @SqlResultSetMappings({
-	@SqlResultSetMapping(name = Constants.FIND_ALL_EMPLOYEES_RESULT_SET_MAPPING, classes = @ConstructorResult(targetClass = EmployeeModel.class, columns = {
+	@SqlResultSetMapping(name = Constants.FIND_ALL_EMPLOYEES_RESULT_SET_MAPPING, classes = @ConstructorResult(targetClass = EmployeeDeptModel.class, columns = {
 			@ColumnResult(name = "empno", type = Integer.class), @ColumnResult(name = "ename", type = String.class),
 			@ColumnResult(name = "job", type = String.class), @ColumnResult(name = "sal", type = Long.class),
 			@ColumnResult(name = "comm", type = Long.class), @ColumnResult(name = "mgr", type = Integer.class),
 			@ColumnResult(name = "hiredate", type = Date.class), @ColumnResult(name = "deptno", type = Integer.class),
 			@ColumnResult(name = "dname", type = String.class), @ColumnResult(name = "loc", type = String.class) })
-	),
+		),
 	
 	@SqlResultSetMapping(
-				name = Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_RESULT_SET_MAPPING, 
-				classes = @ConstructorResult(targetClass = EmployeeModel.class, columns = {
-				@ColumnResult(name = "empno", type = Integer.class), @ColumnResult(name = "ename", type = String.class),
-				@ColumnResult(name = "job", type = String.class), @ColumnResult(name = "sal", type = Long.class),
-				@ColumnResult(name = "comm", type = Long.class), @ColumnResult(name = "mgr", type = Integer.class),
-				@ColumnResult(name = "hiredate", type = Date.class), @ColumnResult(name = "deptno", type = Integer.class),
-				@ColumnResult(name = "dname", type = String.class), @ColumnResult(name = "loc", type = String.class) })
-			)
+			name = Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_RESULT_SET_MAPPING, 
+			classes = @ConstructorResult(targetClass = EmployeeDeptModel.class, columns = {
+			@ColumnResult(name = "empno", type = Integer.class), @ColumnResult(name = "ename", type = String.class),
+			@ColumnResult(name = "job", type = String.class), @ColumnResult(name = "sal", type = Long.class),
+			@ColumnResult(name = "comm", type = Long.class), @ColumnResult(name = "mgr", type = Integer.class),
+			@ColumnResult(name = "hiredate", type = Date.class), @ColumnResult(name = "deptno", type = Integer.class),
+			@ColumnResult(name = "dname", type = String.class), @ColumnResult(name = "loc", type = String.class) })
+		),
+	
+	@SqlResultSetMapping(
+			name = Constants.FIND_ALL_EMPS_AND_DEPTS_RESULT_SET_MAPPING, 
+			classes = {
+					@ConstructorResult(targetClass = EmployeeModel.class, columns = {
+					@ColumnResult(name = "empno", type = Integer.class), @ColumnResult(name = "ename", type = String.class),
+					@ColumnResult(name = "deptno", type = Integer.class), @ColumnResult(name = "job", type = String.class), 
+					@ColumnResult(name = "sal", type = Long.class), @ColumnResult(name = "comm", type = Long.class), 
+					@ColumnResult(name = "mgr", type = Integer.class), @ColumnResult(name = "hiredate", type = Date.class),
+					@ColumnResult(name = "active", type = Boolean.class)
+					 }),
+					
+					@ConstructorResult(targetClass = DepartmentModel.class, columns = {
+					@ColumnResult(name = "deptno", type = Integer.class), 
+					@ColumnResult(name = "dname", type = String.class),
+					@ColumnResult(name = "loc", type = String.class) })
+				}
+		),
 })
 @NamedStoredProcedureQueries({
 		@NamedStoredProcedureQuery(
@@ -58,7 +78,12 @@ import lombok.NoArgsConstructor;
 		@NamedStoredProcedureQuery(
 				name = Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_NAME, 
 				procedureName = Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_SP,
-				resultSetMappings = { Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_RESULT_SET_MAPPING }) 
+				resultSetMappings = { Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_RESULT_SET_MAPPING }),
+		
+		@NamedStoredProcedureQuery(
+				name = Constants.FIND_ALL_EMPS_AND_DEPTS_NAME, 
+				procedureName = Constants.FIND_ALL_EMPS_AND_DEPTS_SP//,
+				/*resultSetMappings = { Constants.FIND_ALL_EMPS_AND_DEPTS_RESULT_SET_MAPPING }*/)
 		})
 // @formatter:on
 public class Employee {

@@ -37,4 +37,24 @@ public class EmployeeRepositoryImpl implements CustomEmployeeRespository {
 
 		return result;
 	}
+
+	@Override
+	public Object findAllEmployeesAndDepartments() {
+		StoredProcedureQuery storedProcedureQuery = entityManager
+				.createNamedStoredProcedureQuery(Constants.FIND_ALL_EMPS_AND_DEPTS_NAME);
+
+		Boolean hasResultSet = storedProcedureQuery.execute();
+
+		Object employeesList = storedProcedureQuery.getResultList();
+		/*List<DepartmentModel> departmentList = null;
+		if (storedProcedureQuery.hasMoreResults()) {
+			departmentList = storedProcedureQuery.getResultList();
+		}
+		
+		Map<String, List<? extends Object>> result = new HashMap<>();
+		result.put("employees", employeesList);
+		result.put("departments", departmentList);*/
+
+		return employeesList;
+	}
 }

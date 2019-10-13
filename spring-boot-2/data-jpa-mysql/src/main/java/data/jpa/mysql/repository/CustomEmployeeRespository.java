@@ -9,4 +9,6 @@ public interface CustomEmployeeRespository {
 	List<Employee> findAllEmployees();
 
 	List<Employee> findAllEmployeesByDeptId(Integer deptId);
+
+	Object findAllEmployeesAndDepartments();
 }

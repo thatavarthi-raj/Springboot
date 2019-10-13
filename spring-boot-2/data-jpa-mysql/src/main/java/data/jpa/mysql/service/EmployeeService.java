@@ -25,4 +25,8 @@ public class EmployeeService {
 
 		return employeesList;
 	}
+
+	public Object findAllEmployeesAndDepartments() {
+		return employeeRepository.findAllEmployeesAndDepartments();
+	}
 }

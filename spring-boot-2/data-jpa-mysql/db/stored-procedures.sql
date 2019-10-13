@@ -22,7 +22,23 @@ begin
 end //
 delimiter ;
 
+drop procedure find_employee_by_dept_id;
+
 call find_employee_by_dept_id(10);
 call find_employee_by_dept_id(20);
 call find_employee_by_dept_id(30);
 call find_employee_by_dept_id(40);
+
+-- stored procedure return result from multiple selects
+delimiter //
+create procedure find_employees_and_depts()
+begin
+	select * from emp;
+    
+    select * from dept;
+end //
+delimiter ;
+
+drop procedure find_employees_and_depts;
+
+call find_employees_and_depts;
