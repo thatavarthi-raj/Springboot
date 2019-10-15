@@ -20,11 +20,11 @@ gradle init --type pom
 * Gradle **5.0**
 
 ## Steps
-* Add spring boot dependencies. Refer [pom.xml](pom.xml)
-* Create [config](/async/controller/config/AppConfig.java) class. Declare annotation **org.springframework.scheduling.annotation.EnableAsync**
-* Create [service](/async/controller/service/AsyncService.java) class. Declare methods calling API with annotation **org.springframework.scheduling.annotation.Async**
+* Add spring boot dependencies. Refer [pom.xml](pom.xml) or [build.gradle](build.gradle)
+* Create [config](async/controller/config/AppConfig.java) class. Declare annotation **org.springframework.scheduling.annotation.EnableAsync**
+* Create [service](async/controller/service/AsyncService.java) class. Declare methods calling API with annotation **org.springframework.scheduling.annotation.Async**
 * All async methods in service class return **java.util.concurrent.CompletableFuture**
-* Create [controller](/async/controller/controller/AsyncController.java). Call API consuming method in service class
+* Create [controller](async/controller/controller/AsyncController.java). Call API consuming method in service class
 
 ## API
 * Refer [files](files)
