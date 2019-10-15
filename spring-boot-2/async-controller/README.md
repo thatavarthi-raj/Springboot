@@ -2,7 +2,7 @@
 
 * Problem Statement
 ```
-Consume 3 API asynchronously. Return final response wrapping response of 3 API calls. 3 API calls run in parallel
+Consume 3 API asynchronously. Wrap 3 API calls response and return final response. 3 API calls run in parallel
 ```
 
 ## Create project using maven
