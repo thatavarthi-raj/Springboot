@@ -57,3 +57,6 @@ gradlew clean compileJava build
 ```
 java -jar -Dapp.properties.file=[projection-location]\files\application.properties build\libs\read-propeties-file-outside-jar-1.0.jar
 ```
+
+## References
+* [https://www.baeldung.com/spring-properties-file-outside-jar](https://www.baeldung.com/spring-properties-file-outside-jar)
