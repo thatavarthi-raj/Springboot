@@ -1,4 +1,9 @@
-# Spring Boot 2 Logging with Log4J, SLF4, Lombok
+# Spring Boot 2 Read Properties file that is outside jar
+
+## Requirement
+* Read properties file
+* Properties file is not part jar
+* Properties file path should be passed as VM argument while starting the application
 
 ## Create project using maven
 ```
@@ -19,7 +24,7 @@ gradle init --type pom
 * Declare annotation **org.springframework.context.annotation.PropertySource** on main class **read.properties.outside.jar.App**
 * Pass JVM argument **app.properties.file** while executing jar
 ```
--Dapp.properties.file=[path]\application.properties
+-Dapp.properties.file=[projection-location]\files\application.properties
 ```
 
 ## API
@@ -29,7 +34,7 @@ gradle init --type pom
 * Right click on **read.properties.outside.jar.App**
 * Run As - Run Configurations
 * Arguments tab - VM arguments
-* Give **-Dapp.properties.file=[path]\application.properties**
+* Give **-Dapp.properties.file=[projection-location]\files\application.properties**
 * Click on **Apply** - **Run**
 * Tomcat should be started on port **9000**
 
@@ -40,7 +45,7 @@ mvn clean compile package
 ```
 * Execute jar
 ```
-java -jar -Dapp.properties.file=[path]\application.properties target\read-propeties-file-outside-jar.jar
+java -jar -Dapp.properties.file=[projection-location]\files\application.properties target\read-propeties-file-outside-jar.jar
 ```
 
 ## Run using Gradle
@@ -50,5 +55,5 @@ gradlew clean compileJava build
 ```
 * Execute jar
 ```
-java -jar -Dapp.properties.file=[path]\application.properties build\libs\read-propeties-file-outside-jar-1.0.jar
+java -jar -Dapp.properties.file=[projection-location]\files\application.properties build\libs\read-propeties-file-outside-jar-1.0.jar
 ```

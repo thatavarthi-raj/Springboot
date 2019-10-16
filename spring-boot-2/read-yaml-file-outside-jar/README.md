@@ -1,4 +1,9 @@
-# Spring Boot 2 Logging with Log4J, SLF4, Lombok
+# Spring Boot 2 Read yaml file that is outside jar
+
+## Requirement
+* Read yaml file
+* Yaml file is not part jar
+* Yaml file path should be passed as VM argument while starting the application
 
 ## Create project using maven
 ```
@@ -21,7 +26,7 @@ gradle init --type pom
 * 
 * Pass JVM argument **app.properties.file** while executing jar
 ```
--Dapp.properties.file=[path]\application.yml
+-Dapp.properties.file=[projection-location]\files\application.yml
 ```
 
 ## API
@@ -31,7 +36,7 @@ gradle init --type pom
 * Right click on **read.properties.outside.jar.App**
 * Run As - Run Configurations
 * Arguments tab - VM arguments
-* Give **-Dapp.properties.file=[path]\application.yml**
+* Give **-Dapp.properties.file=[projection-location]\files\application.yml**
 * Click on **Apply** - **Run**
 * Tomcat should be started on port **9000**
 
@@ -42,7 +47,7 @@ mvn clean compile package
 ```
 * Execute jar
 ```
-java -jar -Dapp.properties.file=[path]\application.yml target\read-yaml-file-outside-jar.jar
+java -jar -Dapp.properties.file=[projection-location]\files\application.yml target\read-yaml-file-outside-jar.jar
 ```
 
 ## Run using Gradle
@@ -52,5 +57,5 @@ gradlew clean compileJava build
 ```
 * Execute jar
 ```
-java -jar -Dapp.properties.file=[path]\application.yml build\libs\read-yaml-file-outside-jar-1.0.jar
+java -jar -Dapp.properties.file=[projection-location]\files\application.yml build\libs\read-yaml-file-outside-jar-1.0.jar
 ```

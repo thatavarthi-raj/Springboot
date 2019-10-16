@@ -29,6 +29,12 @@ gradle init --type pom
 </dependency>
 ```
 * Add **spring-boot-starter-jetty** dependency
+```
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-jetty</artifactId>
+</dependency>
+```
 * Refer [pom.xml](pom.xml)
 
 ## Steps in Gradle
@@ -76,5 +82,5 @@ java -jar target\embedded-jetty.jar
 
 ## Execute jar of Gradle
 ```
-java -jar build\lib\embedded-jetty.jar
+java -jar build\libs\embedded-jetty.jar
 ```

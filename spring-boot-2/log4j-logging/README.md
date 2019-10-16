@@ -1,5 +1,10 @@
 # Spring Boot 2 Logging with Log4J, SLF4, Lombok
 
+## Requirement
+* Use Log4J2.xml for logging
+* Use Log4J with SLF4J
+* Use SLF4J with Lombok
+
 ## Create project using maven
 ```
 mvn archetype:generate -DgroupId=log4j.logging -DartifactId=log4j-logging -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -29,6 +34,12 @@ gradle init --type pom
 </dependency>
 ```
 * Add **spring-boot-starter-log4j2** dependency
+```
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-log4j2</artifactId>
+</dependency>
+```
 * Refer [pom.xml](pom.xml)
 
 ## Steps in Gradle
@@ -79,7 +90,7 @@ java -jar target\log4j-logging.jar
 
 ## Execute jar of Gradle
 ```
-java -jar build\lib\log4j-logging.jar
+java -jar build\libs\log4j-logging.jar
 ```
 
 ## Asynchronous Loggers
