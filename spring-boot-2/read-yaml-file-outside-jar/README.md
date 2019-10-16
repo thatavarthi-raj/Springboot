@@ -16,14 +16,16 @@ gradle init --type pom
 
 ## Steps
 * Add spring boot dependencies. Refer [pom.xml](pom.xml)
-* Declare annotation **org.springframework.context.annotation.PropertySource** on main class **read.properties.outside.jar.App**
+* Create class **read.yaml.outside.jar.config.YamlPropertySourceFactory** to read yaml file
+* Declare annotation **org.springframework.context.annotation.PropertySource** with attributes **valuevalue = "file:${app.properties.file}", factory = YamlPropertySourceFactory.class**  on main class **read.properties.outside.jar.App**
+* 
 * Pass JVM argument **app.properties.file** while executing jar
 ```
 -Dapp.properties.file=[path]\application.yml
 ```
 
 ## API
-* Refer [files/read-propeties-file-outside-jar.postman_collection.json](files/read-propeties-file-outside-jar.postman_collection.json)
+* Refer [files/read-yaml-file-outside-jar.postman_collection.json](files/read-yaml-file-outside-jar.postman_collection.json)
 
 ## Run From Eclipse/STS
 * Right click on **read.properties.outside.jar.App**
