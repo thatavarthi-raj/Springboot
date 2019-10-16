@@ -20,3 +20,7 @@
 * [Unit Testing](unit-testing)
 * [Docker image with maven plugin](docker-with-maven-pugin)
 * [Async Controller](async-controller)
+* [Jetty Server](embedded-jetty)
+* [Log4J2 Logging](log4j-logging)
+* [Read Properties file outside jar](read-propeties-file-outside-jar)
+* [Read yaml file outside jar](read-yaml-file-outside-jar)

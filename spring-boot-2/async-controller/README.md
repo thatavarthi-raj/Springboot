@@ -53,7 +53,12 @@ mvn clean compile package
 gradlew clean compileJava build
 ```
 
-## Execute jar
+## Execute jar of Maven
 ```
-java -jar [path-to-jar]\async-controller.jar
+java -jar target\async-controller.jar
+```
+
+## Execute jar of Gradle
+```
+java -jar build\lib\async-controller.jar
 ```
