@@ -52,14 +52,14 @@ gradlew clean compileJava bootRun
 mvn clean compile package
 ```
 
-## Create package using gradle
-```
-gradlew clean compileJava build
-```
-
 ## Execute jar of Maven
 ```
 java -jar target\request-scoped-beans.jar
+```
+
+## Create package using gradle
+```
+gradlew clean compileJava build
 ```
 
 ## Execute jar of Gradle

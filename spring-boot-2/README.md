@@ -25,3 +25,4 @@
 * [Read Properties file outside jar](read-propeties-file-outside-jar)
 * [Read yaml file outside jar](read-yaml-file-outside-jar)
 * [Request Scoped Beans](request-scoped-beans)
+* [CommandLine Runner - Execute some logic after starting of application](command-line-runner)
