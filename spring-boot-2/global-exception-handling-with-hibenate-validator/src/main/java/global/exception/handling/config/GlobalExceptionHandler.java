@@ -1,9 +1,5 @@
 package global.exception.handling.config;
 
-import global.exception.handling.error.model.AppException;
-import global.exception.handling.error.model.ErrorModel;
-import global.exception.handling.error.model.ExceptionModel;
-import global.exception.handling.util.ErrorsEnum;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,9 +9,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import global.exception.handling.error.model.AppException;
+import global.exception.handling.error.model.ErrorModel;
+import global.exception.handling.error.model.ExceptionModel;
+import global.exception.handling.util.ErrorsEnum;
 import lombok.extern.slf4j.Slf4j;
-
-import java.time.LocalDateTime;
 
 @Slf4j
 @RestControllerAdvice
@@ -41,7 +39,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 	/**
 	 * Global exception other than above 3 exceptions
 	 * @param
-     *
+	 *
 	 * @return
 	 */
 	@ExceptionHandler(value = { Exception.class })
@@ -53,17 +51,17 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 				webRequest);
 	}
 
-    @Override
-    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
-                                            HttpHeaders headers, HttpStatus status, WebRequest request) {
-        ErrorModel errorModel = ErrorModel.builder()
-                //.code("100")
-                //.message(ex.getMessage())
-                .value(ex.getBindingResult())
-                //.timestamp(LocalDateTime.now())
-                //.status(HttpStatus.BAD_REQUEST.value())
-                .build();
+	@Override
+	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
+			HttpHeaders headers, HttpStatus status, WebRequest request) {
+		ErrorModel errorModel = ErrorModel.builder()
+				//.code("100")
+				//.message(ex.getMessage())
+				.value(ex.getBindingResult())
+				//.timestamp(LocalDateTime.now())
+				//.status(HttpStatus.BAD_REQUEST.value())
+				.build();
 
-        return new ResponseEntity<>(errorModel, HttpStatus.BAD_REQUEST);
-    }
+		return new ResponseEntity<>(errorModel, HttpStatus.BAD_REQUEST);
+	}
 }

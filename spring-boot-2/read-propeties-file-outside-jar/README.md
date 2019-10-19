@@ -58,5 +58,21 @@ gradlew clean compileJava build
 java -jar -Dapp.properties.file=[projection-location]\files\application.properties build\libs\read-propeties-file-outside-jar-1.0.jar
 ```
 
+## Using spring.config.location
+* Remove **org.springframework.context.annotation.PropertySource** annotation from **read.properties.outside.jar.App**
+* Create jar using maven or gradle
+* Execute maven jar
+```
+java -jar target\read-propeties-file-outside-jar.jar --spring.config.location=file:///[projection-location]\files\application.properties
+```
+* Execute gradle jar
+```
+java -jar build\libs\read-propeties-file-outside-jar-1.0.jar --spring.config.location=file:///[projection-location]\files\application.properties
+```
+* We can pass multiple properties with comma(,) separated
+```
+java -jar build\libs\read-propeties-file-outside-jar-1.0.jar --spring.config.location=file:///[projection-location]\files\application1.properties, [projection-location]\files\application2.properties
+```
+
 ## References
 * [https://www.baeldung.com/spring-properties-file-outside-jar](https://www.baeldung.com/spring-properties-file-outside-jar)

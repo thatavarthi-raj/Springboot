@@ -60,5 +60,5 @@ java -jar target\async-controller.jar
 
 ## Execute jar of Gradle
 ```
-java -jar build\lib\async-controller.jar
+java -jar build\libs\async-controller.jar
 ```
