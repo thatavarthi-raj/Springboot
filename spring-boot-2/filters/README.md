@@ -85,4 +85,4 @@ java -jar build\libs\filters-1.0.jar
 ```
 
 ## API
-Refer [files\filters.postman_collection.json](files\filters.postman_collection.json)
+Refer [files/filters.postman_collection.json](files/filters.postman_collection.json)
