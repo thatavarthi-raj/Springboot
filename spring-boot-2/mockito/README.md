@@ -16,6 +16,9 @@ gradle init --type pom
 * Maven **3.5.2**
 * Gradle **5.0**
 
+## API
+* Refer [files/mockito.postman_collection.json](files/mockito.postman_collection.json)
+
 ## Examples
 * [Inject Actual Object](#inject-actual-object)
 
