@@ -49,6 +49,17 @@ public FilterRegistrationBean<FilterFour> registerApiTwoFilter() {
 }
 ```
 * Create filter **filters.all.FilterFive**. Register for requests **/api/v1**, **/api/v2** in **filters.config.AppConfig**
+```
+@Bean
+public FilterRegistrationBean<FilterFive> registerFilterFive() {
+	FilterRegistrationBean<FilterFive> registrationBean = new FilterRegistrationBean<>();
+
+	registrationBean.setFilter(filterFive);
+	registrationBean.setUrlPatterns(Arrays.asList("/api/v1/*", "/api/v2/*"));
+
+	return registrationBean;
+}
+```
 
 ## Run this project
 * Import project into IDE as Maven or Gradle project

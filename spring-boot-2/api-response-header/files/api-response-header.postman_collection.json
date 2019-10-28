@@ -1,0 +1,33 @@
+{
+	"variables": [],
+	"info": {
+		"name": "api-response-header",
+		"_postman_id": "5bc0ff07-7394-45e4-d651-07d9338f781c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1",
+			"request": {
+				"url": "http://localhost:9000/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "2",
+			"request": {
+				"url": "http://localhost:9000/2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
