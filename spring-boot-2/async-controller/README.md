@@ -27,7 +27,7 @@ gradle init --type pom
 * Create **async.controller.controller.AsyncController**. Call API consuming method in service class
 
 ## API
-* Refer [files](files)
+* Refer [files/async-controller.postman_collection.json](files/async-controller.postman_collection.json)
 
 ## Run this project
 * Import project into IDE as Maven or Gradle project
