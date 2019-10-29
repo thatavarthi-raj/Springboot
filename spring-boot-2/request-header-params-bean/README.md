@@ -19,7 +19,7 @@ gradle init --type pom
 * Gradle **5.0**
 
 ## Examples
-* [Request params to bean properties](request-params-to-bean-properties)
+* [Request params to bean properties](#request-params-to-bean-properties)
 
 ## Request params to bean properties
 * Add Spring Boot dependencies. Refer [pom.xml](pom.xml) (or) [build.gradle](build.gradle)
