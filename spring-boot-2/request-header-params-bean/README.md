@@ -18,7 +18,10 @@ gradle init --type pom
 * Maven **3.5.2**
 * Gradle **5.0**
 
-## Steps
+## Examples
+* [Request params to bean properties](request-params-to-bean-properties)
+
+## Request params to bean properties
 * Add Spring Boot dependencies. Refer [pom.xml](pom.xml) (or) [build.gradle](build.gradle)
 * Create model class for all request params
 * Initialize properties. If request parameter is not passed default values will be taken
