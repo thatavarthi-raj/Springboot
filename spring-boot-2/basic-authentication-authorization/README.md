@@ -29,7 +29,7 @@ gradle init --type pom
 * Add spring security dependencies. Refer [pom.xml](pom.xml) (or) [build.gradle](build.gradle)
 * Configure security. Refer [src/main/java/basic/authentication/authorization/configuration/SecurityConfig.java](src/main/java/basic/authentication/authorization/configuration/SecurityConfig.java)
 * Make **UserModel** as request scoped bean
-* Refer [basic/authentication/authorization/controller](basic/authentication/authorization/controller) for controllers 
+* Refer [src/main/java/basic/authentication/authorization/controller](basic/authentication/authorization/controller) for controllers 
 
 ## API
 * Refer [files/basic-authentication-authorization.postman_collection.json](files/basic-authentication-authorization.postman_collection.json)
