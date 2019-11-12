@@ -1,50 +1,95 @@
 {
-	"variables": [],
 	"info": {
+		"_postman_id": "92b51469-b66d-4327-a36f-2be13da3b263",
 		"name": "spring-boot-actuator",
-		"_postman_id": "e7dea259-023d-4974-6b52-a2189d68d50e",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "actuator",
 			"request": {
-				"url": "http://localhost:9091/actuator",
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"description": ""
+				"url": {
+					"raw": "http://localhost:9000/actuator",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"actuator"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "health",
 			"request": {
-				"url": "http://localhost:9091/actuator/health",
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"description": ""
+				"url": {
+					"raw": "http://localhost:9000/actuator/health?status=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"actuator",
+						"health"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "0"
+						}
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "actuator-info",
 			"request": {
-				"url": "http://localhost:9091/actuator/info",
 				"method": "GET",
 				"header": [],
-				"body": {},
-				"description": ""
+				"url": {
+					"raw": "http://localhost:9000/actuator/info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"actuator",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/actuator/info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"actuator",
+						"info"
+					]
+				}
 			},
 			"response": []
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
