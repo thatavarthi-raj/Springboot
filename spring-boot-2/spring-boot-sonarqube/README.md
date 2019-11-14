@@ -22,7 +22,7 @@ gradle init --type pom
 * spring-boot-starter-test
 
 ## Setup Sonarqube
-* Refer **[Sonarqube](https://github.com/avinashbabudonthu/tools/tree/master/sonarqube/setup-with-mysql)**
+* Refer **[Sonarqube](https://github.com/avinashbabudonthu/others/tree/master/sonarqube/setup-with-mysql)**
 
 ## Configure sonarqube to maven spring boot 2 project
 * Add **sonar-project.properties** in the root of the project
