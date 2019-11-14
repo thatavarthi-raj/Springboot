@@ -43,8 +43,12 @@ sonar.host.url=http://localhost:9000
 * Open url in browser, we will see sonar report
 
 ## Configure sonarqube to gradle spring boot 2 project
+* Add **sonarqube** plugin
+```
+id "org.sonarqube" version "2.7.1"
+```
 * Create task in build.gradle with sonar properties as below:
-``` sonarqube properties
+```
 sonarqube{
     properties{
         property "sonar.projectKey", "Spring-Boot-2-Gradle-Sonarqube"
