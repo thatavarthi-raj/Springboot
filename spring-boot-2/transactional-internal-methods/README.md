@@ -27,7 +27,7 @@ mysql connector
 ```
 * Create DB and user in mysql. Refer [Create DB and user scripts](https://github.com/avinashbabudonthu/sql/blob/master/mysql/create-db-and-user.sql)
 * Create table. Refer [Create tables scripts](db/create_tables.sql)
-* Refer [Select queries](db/select.sql), [Delete queries](delete.sql)
+* Refer [Select queries](db/select.sql), [Delete queries](db/delete.sql)
 * Add database properties in [application.properties](src/main/resources/application.properties)
 * Create [StudentEntity](src/main/java/com/internal/methods/transactional/entity/StudentEntity.java)
 * Create [StudentModel](src/main/java/com/internal/methods/transactional/model/StudentModel.java)
