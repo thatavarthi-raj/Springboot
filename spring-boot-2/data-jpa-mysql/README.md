@@ -19,12 +19,12 @@ gradle init --type pom
 ```
 
 ## SQL Files
-* Create tables scripts - **db/create-tables.sql**
-* Data scripts - **db/data.sql**
-* Delete scripts - **db/delete.sql**
-* Drop scripts - **db/drop-tables.sql**
-* Select queries - **db/select.sql**
-* Stored Procedures - **db/stored-procedures.sql**
+* [Create tables scripts](data-jpa-mysql/db/create-tables.sql)
+* [Data scripts](data-jpa-mysql/db/data.sql)
+* [Delete scripts](data-jpa-mysql/db/delete.sql)
+* [Drop scripts](data-jpa-mysql/db/drop-tables.sql)
+* [Select queries](data-jpa-mysql/db/select.sql)
+* [Stored Procedures](data-jpa-mysql/db/stored-procedures.sql)
 
 ## Entities
 * Employee
