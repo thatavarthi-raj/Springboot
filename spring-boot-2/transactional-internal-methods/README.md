@@ -40,6 +40,10 @@ mysql connector
 * API **/save-and-commit-all-student-models** - **saveAndCommitAllStudentModels()** used to test **@Transactional** on public method
 * Create [App](src/main/java/com/internal/methods/transactional/App.java). Declare **@EnableAspectJAutoProxy(proxyTargetClass = true)** at class level
 
+## Postman collection
+* Import [/postman-collection/transactional-internal-methods.postman_collection.json](/postman-collection/transactional-internal-methods.postman_collection.json) for API
+* Import [postman-collection/transactional-internal-methods.postman_environment.json](postman-collection/transactional-internal-methods.postman_environment.json) for postman environments
+
 ## Run this project
 * Import project into IDE as Maven or Gradle project
 * Execute App class in each package
