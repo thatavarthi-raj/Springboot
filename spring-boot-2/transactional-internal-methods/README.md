@@ -16,7 +16,7 @@ gradle init --type pom
 ```
 
 ## Steps
-* Add following dependencies. Refer [pom.xml](pom.xml) or [build.gradle](build.gradle]
+* Add following dependencies. Refer [pom.xml](pom.xml) or [build.gradle](build.gradle)
 ```
 spring boot
 actuator
