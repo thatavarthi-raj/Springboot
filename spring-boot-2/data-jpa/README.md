@@ -33,7 +33,6 @@ gradle init --type pom
 ```
 find_all_employees()
 find_employee_by_dept_id(in dept_id_in int)
-find_employees_and_depts()
 ```
 
 
@@ -42,7 +41,7 @@ find_employees_and_depts()
 * [Execute stored procedure - 1 in param, n out params](#execute-stored-procedure-with-one-in-param-multiple-out-params)
 
 ### Execute stored procedure returns multiple columns and return model list
-* Create stored procedure **find_all_employees** - Refer **db/stored-procedures.sql**
+* Create stored procedure **[find_all_employees](https://github.com/avinashbabudonthu/sql/blob/master/mysql/stored-procedures.sql)**
 * Declare **javax.persistence.NamedStoredProcedureQueries** annotation on **Employee.java** and define stored procedure details
 * Declare **javax.persistence.SqlResultSetMapping** annotation on **Employee.java** and define target resultset class name
 * Define custom repository interface - **data.jpa.mysql.repository.CustomEmployeeRespository**
@@ -51,7 +50,7 @@ find_employees_and_depts()
 * Execute stored procedure - **data.jpa.mysql.repository.EmployeeRepositoryImpl.findAllEmployees()**
 
 ## Execute Stored Procedure With One In Param Multiple Out Params
-* Create stored procedure **find_employee_by_dept_id** - Refer **db/stored-procedures.sql**
+* Create stored procedure **[find_employee_by_dept_id](https://github.com/avinashbabudonthu/sql/blob/master/mysql/stored-procedures.sql)**
 * Declare **javax.persistence.NamedStoredProcedureQueries** annotation on **Employee.java** with name **Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_NAME**
 * Result set mapping with name **Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_RESULT_SET_MAPPING**. This is used to return **List&lt;EmployeeModel&gt;**
 * Refer API
