@@ -34,3 +34,4 @@
 * [Basic Authentication Authorization API With MySQL DB](basic-authentication-authorization)
 * [Spring Boot Scheduling](scheduling)
 * [Main Class is Not Present in Manifest](main-class-not-present-in-manifest)
+* [Mulitiple Profiles in Single Yaml File](multiple-profile-in-one-yaml)
