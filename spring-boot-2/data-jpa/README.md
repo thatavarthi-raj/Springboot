@@ -65,5 +65,7 @@ EmployeeController.findAllEmployeesByDeptId(@PathVariable("id") Integer deptId)
 ## Postman Collection
 * [data-jpa.postman_collection.json](postman-collection/data-jpa.postman_collection.json)
 
-## References
+## Materials
 * [Spring data examples jpa](https://github.com/spring-projects/spring-data-examples/tree/master/jpa/jpa21)
+### Pluralsight
+* Getting Started with Spring Data JPA
