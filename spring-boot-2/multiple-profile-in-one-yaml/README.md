@@ -56,3 +56,6 @@ gradlew clean compileJava build
 ```
 java -jar build\libs\multiple-profile-in-one-yaml-1.0.jar
 ```
+
+## References
+* [https://www.baeldung.com/spring-yaml](https://www.baeldung.com/spring-yaml)
