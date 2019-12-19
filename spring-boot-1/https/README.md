@@ -30,21 +30,18 @@ server.ssl.key-store=classpath:ssl-server.jks
 server.ssl.key-store-provider=SUN
 server.ssl.key-store-type=JKS
 ```
-* Create [src\main\java\com\spring\boot\https\controller\AppController.java](src\main\java\com\spring\boot\https\controller\AppController.java)
+* Create [src/main/java/com/spring/boot/https/controller/AppController.java](src/main/java/com/spring/boot/https/controller/AppController.java)
 * Write GET API **/secured**
-* Run [src\main\java\com\spring\boot\https\App.java](src\main\java\com\spring\boot\https\App.java)
+* Run [src/main/java/com/spring/boot/https/App.java](src/main/java/com/spring/boot/https/App.java)
 * Open browser and hit URL **[https://localhost:8443/secured](https://localhost:8443/secured)**
 
 ### To redirect http calls to https
-* Create **EmbeddedServletContainerFactory** bean. Refer [src\main\java\com\spring\boot\https\config\AppConfig.java](src\main\java\com\spring\boot\https\config\AppConfig.java)
+* Create **EmbeddedServletContainerFactory** bean. Refer [src/main/java/com/spring/boot/https/config/AppConfig.java](src/main/java/com/spring/boot/https/config/AppConfig.java)
 * Open browser and hit URL **[http://localhost:8080/secured](http://localhost:8080/secured)**
-
-## API
-* Refer [files/async-controller.postman_collection.json](files/async-controller.postman_collection.json)
 
 ## Run this project
 * Import project into IDE as Maven or Gradle project
-* Execute App class in each package
+* Execute [src/main/java/com/spring/boot/https/App.java](src/main/java/com/spring/boot/https/App.java)
 
 ## Run using maven
 ```
@@ -61,17 +58,17 @@ gradlew clean compileJava bootRun
 mvn clean compile package
 ```
 
+## Execute jar of Maven
+```
+java -jar target\https.jar
+```
+
 ## Create package using gradle
 ```
 gradlew clean compileJava build
 ```
 
-## Execute jar of Maven
-```
-java -jar target\async-controller.jar
-```
-
 ## Execute jar of Gradle
 ```
-java -jar build\libs\async-controller.jar
+java -jar build\libs\https.jar
 ```
