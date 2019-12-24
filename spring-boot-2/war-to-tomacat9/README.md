@@ -48,6 +48,10 @@ apply plugin: 'war'
     	password="your-db-password" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/practice" 
     	username="your-db-username"/>
 ```
+* Use JNDI in [src/main/resources/application.properties](src/main/resources/application.properties)
+```
+spring.datasource.jndi-name=java:comp/env/jdbc/MyDB
+```
 * Deploy to tomcat
 
 ## API
@@ -61,12 +65,16 @@ apply plugin: 'war'
 * Import postman collection to postman - [files/war-to-tomacat9.postman_collection.json](files/war-to-tomacat9.postman_collection.json)
 * Access APIs
 
-## Create war using Maven
+## Deploy war manually - Maven
+* Create war
 ```
 mvn clean package
 ```
+* Copy **target/war-to-tomacat9.war** to **Tomcat/../webapps** folder
 
-## Create war using Gradle
+## Deploy war manually - Gradle
+* Create war
 ```
-gradlew clean war
+gradlew clean build
 ```
+* Copy **build/libs/war-to-tomacat9.war** to **Tomcat/../webapps** folder
