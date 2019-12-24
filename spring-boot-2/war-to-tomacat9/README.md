@@ -1,13 +1,15 @@
-# Async Controller
+# Spring Boot War
 
-* Problem Statement
-```
-Consume 3 API asynchronously. Wrap 3 API calls response and return final response. 3 API calls run in parallel
-```
+## Problem Statement
+* Create Spring Boot War
+* Deploy to Tomcat 9
+* Declare JNDI in Tomcat 9
+* Connect to DB using JNDI declared in Tomcat 9
+* Query Employee table, return result in JSON
 
 ## Create project using maven
 ```
-mvn archetype:generate -DgroupId=async.controller -DartifactId=async-controller -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.spring.boot2.war.tomcat9 -DartifactId=war-to-tomacat9 -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
 ## Add gradle
@@ -15,50 +17,56 @@ mvn archetype:generate -DgroupId=async.controller -DartifactId=async-controller 
 gradle init --type pom
 ```
 
-## Versions
-* Maven **3.5.2**
-* Gradle **5.0**
-
 ## Steps
-* Add spring boot dependencies. Refer [pom.xml](pom.xml) or [build.gradle](build.gradle)
-* Create **async.controller.config.AppConfig** class. Declare annotation **org.springframework.scheduling.annotation.EnableAsync**
-* Create **async.controller.service.AsyncService** class. Declare methods calling API with annotation **org.springframework.scheduling.annotation.Async**
-* All async methods in service class return **java.util.concurrent.CompletableFuture**
-* Create **async.controller.controller.AsyncController**. Call API consuming method in service class
+* Make **spring-boot-starter-tomcat** as provided
+* Maven - [pom.xml](pom.xml)
+```
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-tomcat</artifactId>
+	<scope>provided</scope>
+</dependency>
+```
+* Gradle - [build.gradle](build.gradle)
+```
+providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+```
+* Make package type as War
+* Maven - [pom.xml](pom.xml)
+```
+<packaging>war</packaging>
+```
+* Gradle - [build.gradle](build.gradle)
+```
+apply plugin: 'war'
+```
+* Main class extends **SpringBootServletInitializer** and override **configure(SpringApplicationBuilder builder)** method. Refer [src/main/java/com/spring/boot2/war/tomcat9/App.java](src/main/java/com/spring/boot2/war/tomcat9/App.java)
+* Declare JNDI in Tomcat 9. Open **Tomcat-installation-directory/conf/context.xml** give following entry
+```
+<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" global="jdbc/MyDB" 
+    	maxTotal="100" maxIdle="20" maxWaitMillis="10000" minIdle="5" name="jdbc/MyDB" 
+    	password="your-db-password" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/practice" 
+    	username="your-db-username"/>
+```
+* Deploy to tomcat
 
 ## API
-* Refer [files/async-controller.postman_collection.json](files/async-controller.postman_collection.json)
+* Refer [files/war-to-tomacat9.postman_collection.json](files/war-to-tomacat9.postman_collection.json)
 
 ## Run this project
-* Import project into IDE as Maven or Gradle project
-* Execute [src/main/java/](src/main/java/)
+* Import project into IDE as **Maven** or **Gradle** project
+* configure tomcat in IDE
+* Deploy application to tomcat from IDE
+* Start tomcat
+* Import postman collection to postman - [files/war-to-tomacat9.postman_collection.json](files/war-to-tomacat9.postman_collection.json)
+* Access APIs
 
-## Run using maven
+## Create war using Maven
 ```
-mvn clean compile spring-boot:run
-```
-
-## Run using gradle
-```
-gradlew clean compileJava bootRun
-```
-
-## Create package using maven
-```
-mvn clean compile package
+mvn clean package
 ```
 
-## Execute jar of Maven
+## Create war using Gradle
 ```
-java -jar target\async-controller.jar
-```
-
-## Create package using gradle
-```
-gradlew clean compileJava build
-```
-
-## Execute jar of Gradle
-```
-java -jar build\libs\async-controller.jar
+gradlew clean war
 ```
