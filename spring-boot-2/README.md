@@ -36,3 +36,4 @@
 * [Main Class is Not Present in Manifest](main-class-not-present-in-manifest)
 * [Mulitiple Profiles in Single Yaml File](multiple-profile-in-one-yaml)
 * [War Deploy To Tomcat 9](war-to-tomacat9)
+* [Global Filters Exception Handling](global-filters-exception-handling)
