@@ -1,5 +1,9 @@
 package global.filters.exception.handling.config;
 
+import static global.filters.exception.handling.util.Constants.TRANSACTION_ID;
+
+import java.util.UUID;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -22,6 +26,8 @@ public class GlobalErrorHandler implements ErrorController {
 	public ResponseEntity<ExceptionModel> handleError(final HttpServletRequest request,
 			final HttpServletResponse response) {
 		ExceptionModel exceptionModel = null;
+		response.setHeader(TRANSACTION_ID, UUID.randomUUID().toString()); // Include transaction id in response header in error scenario
+
 		Exception exception = (Exception) request.getAttribute("javax.servlet.error.exception");
 		try {
 			if (exception instanceof AppException) {
