@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.api.response.header.model.Student;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestController
 public class AppController {
 
@@ -35,4 +38,11 @@ public class AppController {
 		return ResponseEntity.ok().headers(httpHeaders).body(student);
 	}
 
+	@GetMapping(value = "/3", produces = APPLICATION_JSON_VALUE)
+	public ResponseEntity<Student> apiThree() {
+		log.info("Inside api /3");
+		Student student = Student.builder().id(1L).name("jack").build();
+
+		return ResponseEntity.ok().body(student);
+	}
 }
