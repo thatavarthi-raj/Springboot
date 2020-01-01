@@ -47,7 +47,7 @@ configurations{
 ```
 compile "org.springframework.boot:spring-boot-starter-log4j2"
 ```
-* Add [log4j2.xml](/log4j-logging/src/main/resources/log4j2.xml) in **src/main/resources**
+* Add [log4j2.xml](src/main/resources/log4j2.xml) in **src/main/resources**
 * Execute [App.java](src/main/java/log4j/logging/App.java)
 * Hit GET API **http://localhost:9000/actuator**
 
