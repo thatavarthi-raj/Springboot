@@ -15,12 +15,9 @@ mvn archetype:generate -DgroupId=log4j.logging -DartifactId=log4j-logging -Dvers
 gradle init --type pom
 ```
 
-## Versions
-* Maven **3.5.2**
-* Gradle **5.0**
-
-## Steps in Maven
-* Exclude **spring-boot-starter-logging** from **spring-boot-starter**
+## Steps
+* Import project into IDE as Maven or Gradle project
+* Maven - exclude **spring-boot-starter-logging** from **spring-boot-starter**. Refer [pom.xml](pom.xml)
 ```
 <dependency>
 	<groupId>org.springframework.boot</groupId>
@@ -40,10 +37,7 @@ gradle init --type pom
 	<artifactId>spring-boot-starter-log4j2</artifactId>
 </dependency>
 ```
-* Refer [pom.xml](pom.xml)
-
-## Steps in Gradle
-* Exclude **spring-boot-starter-logging** module
+* Gradle exclude **spring-boot-starter-logging** module. Refer [build.gradle](build.gradle)
 ```
 configurations{
 	compile.exclude module: "spring-boot-starter-logging"
@@ -53,11 +47,8 @@ configurations{
 ```
 compile "org.springframework.boot:spring-boot-starter-log4j2"
 ```
-* Refer [build.gradle](build.gradle)
-
-## Run this project
-* Import project into IDE as Maven or Gradle project
-* Execute App class in each package
+* Add [log4j2.xml](/log4j-logging/src/main/resources/log4j2.xml) in **src/main/resources**
+* Execute [App.java](src/main/java/log4j/logging/App.java)
 * Hit GET API **http://localhost:9000/actuator**
 
 ## API
@@ -73,19 +64,19 @@ mvn clean compile spring-boot:run
 gradlew clean compileJava bootRun
 ```
 
-## Create package using maven
+## Create package using Maven
 ```
 mvn clean compile package
-```
-
-## Create package using gradle
-```
-gradlew clean compileJava build
 ```
 
 ## Execute jar of Maven
 ```
 java -jar target\log4j-logging.jar
+```
+
+## Create package using Gradle
+```
+gradlew clean compileJava build
 ```
 
 ## Execute jar of Gradle
