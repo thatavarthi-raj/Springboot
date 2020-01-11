@@ -11,9 +11,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-@NoArgsConstructor
 @Data
 @SuperBuilder
+@NoArgsConstructor
 public class AbstractModel {
 
 	protected String id;
