@@ -35,7 +35,6 @@ find_all_employees()
 find_employee_by_dept_id(in dept_id_in int)
 ```
 
-
 ## Examples
 * [Execute stored procedure - 0 in params, n out params](#execute-stored-procedure-returns-multiple-columns-and-return-model-list)
 * [Execute stored procedure - 1 in param, n out params](#execute-stored-procedure-with-one-in-param-multiple-out-params)

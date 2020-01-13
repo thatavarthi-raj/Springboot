@@ -7,22 +7,31 @@ import org.springframework.stereotype.Service;
 
 import data.jpa.custom.repository.CustomEmployeeRespository;
 import data.jpa.entity.EmployeeEntity;
+import data.jpa.repository.EmployeeEntityRepository;
 
 @Service
 public class EmployeeService {
 
 	@Autowired
-	private CustomEmployeeRespository employeeRepository;
+	private CustomEmployeeRespository customEmployeeRepository;
+
+	@Autowired
+	private EmployeeEntityRepository employeeEntityRepository;
 
 	public List<EmployeeEntity> findAllEmployeesList() {
-		List<EmployeeEntity> employeesList = employeeRepository.findAllEmployees();
+		List<EmployeeEntity> employeesList = customEmployeeRepository.findAllEmployees();
 
 		return employeesList;
 	}
 
 	public List<EmployeeEntity> findAllEmployeesByDeptId(Integer deptId) {
-		List<EmployeeEntity> employeesList = employeeRepository.findAllEmployeesByDeptId(deptId);
-
+		List<EmployeeEntity> employeesList = customEmployeeRepository.findAllEmployeesByDeptId(deptId);
 		return employeesList;
+	}
+
+	public String findEmployeeAndDept() {
+		List<Object[]> result = employeeEntityRepository.findEmployeeAndDept();
+
+		return "success";
 	}
 }
