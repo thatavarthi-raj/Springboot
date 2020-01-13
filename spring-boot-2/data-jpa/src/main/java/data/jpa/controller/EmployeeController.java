@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import data.jpa.entity.EmployeeDepartmentEntity;
 import data.jpa.entity.EmployeeEntity;
 import data.jpa.service.EmployeeService;
 
@@ -26,6 +27,11 @@ public class EmployeeController {
 	@GetMapping(value = "/employees/dept/{id}", produces = APPLICATION_JSON_VALUE)
 	public List<EmployeeEntity> findAllEmployeesByDeptId(@PathVariable("id") Integer deptId) {
 		return employeeService.findAllEmployeesByDeptId(deptId);
+	}
+
+	@GetMapping(value = "/employees/depts")
+	public List<EmployeeDepartmentEntity> findEmployeeAndDept() {
+		return employeeService.findEmployeeAndDept();
 	}
 
 }

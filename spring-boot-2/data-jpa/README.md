@@ -3,11 +3,6 @@
 ## Description
 * Spring Boot 2 Data JPA
 
-## Versions
-* spring boot version 2.1.8.RELEASE
-* Maven version 3.6.2
-* MySql version 5.7.7
-
 ## Create project using maven command
 ```
 mvn archetype:generate -DgroupId=data.jpa -DartifactId=data-jpa -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -38,6 +33,7 @@ find_employee_by_dept_id(in dept_id_in int)
 ## Examples
 * [Execute stored procedure - 0 in params, n out params](#execute-stored-procedure-returns-multiple-columns-and-return-model-list)
 * [Execute stored procedure - 1 in param, n out params](#execute-stored-procedure-with-one-in-param-multiple-out-params)
+* [Spring Data JPA Native Query Resultset Mapping](spring-data-jPA-native-query-resultset-mapping)
 
 ### Execute stored procedure returns multiple columns and return model list
 * Create stored procedure **[find_all_employees](https://github.com/avinashbabudonthu/sql/blob/master/mysql/stored-procedures.sql)**
@@ -48,7 +44,7 @@ find_employee_by_dept_id(in dept_id_in int)
 * Inject **EntityManager** to **data.jpa.mysql.repository.EmployeeRepositoryImpl** using annotation **javax.persistence.PersistenceContext**
 * Execute stored procedure - **data.jpa.mysql.repository.EmployeeRepositoryImpl.findAllEmployees()**
 
-## Execute Stored Procedure With One In Param Multiple Out Params
+### Execute Stored Procedure With One In Param Multiple Out Params
 * Create stored procedure **[find_employee_by_dept_id](https://github.com/avinashbabudonthu/sql/blob/master/mysql/stored-procedures.sql)**
 * Declare **javax.persistence.NamedStoredProcedureQueries** annotation on **Employee.java** with name **Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_NAME**
 * Result set mapping with name **Constants.FIND_ALL_EMPLOYEES_BY_DEPT_ID_RESULT_SET_MAPPING**. This is used to return **List&lt;EmployeeModel&gt;**
@@ -60,6 +56,8 @@ find_employee_by_dept_id(in dept_id_in int)
 ```
 EmployeeController.findAllEmployeesByDeptId(@PathVariable("id") Integer deptId)
 ```
+
+### Spring Data JPA Native Query Resultset Mapping
 
 ## Postman Collection
 * [data-jpa.postman_collection.json](postman-collection/data-jpa.postman_collection.json)

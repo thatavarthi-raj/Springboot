@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ca455ca7-4f27-48d0-96e9-f15b76efeed9",
+		"_postman_id": "c9fe7067-4267-4b36-9d86-59da6d7ee9e9",
 		"name": "data-jpa",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -40,6 +40,26 @@
 						"employees",
 						"dept",
 						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find-all-employees-and-depts-details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/employees/depts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"employees",
+						"depts"
 					]
 				}
 			},
