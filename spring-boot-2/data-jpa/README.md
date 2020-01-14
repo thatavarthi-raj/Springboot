@@ -33,7 +33,7 @@ find_employee_by_dept_id(in dept_id_in int)
 ## Examples
 * [Execute stored procedure - 0 in params, n out params](#execute-stored-procedure-returns-multiple-columns-and-return-model-list)
 * [Execute stored procedure - 1 in param, n out params](#execute-stored-procedure-with-one-in-param-multiple-out-params)
-* [Spring Data JPA Native Query Resultset Mapping](spring-data-jpa-native-query-resultset-mapping)
+* [Spring Data JPA Native Query Resultset Mapping](#spring-data-jpa-native-query-resultset-mapping)
 
 ### Execute stored procedure returns multiple columns and return model list
 * Create stored procedure **[find_all_employees](https://github.com/avinashbabudonthu/sql/blob/master/mysql/stored-procedures.sql)**
