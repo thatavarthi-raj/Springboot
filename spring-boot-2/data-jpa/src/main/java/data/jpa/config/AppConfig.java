@@ -16,6 +16,12 @@ import lombok.extern.slf4j.Slf4j;
 @Configuration
 public class AppConfig {
 
+	/**
+	 * Create this bean only if DB is H2
+	 * 
+	 * @param employeeRepository
+	 * @return
+	 */
 	@ConditionalOnProperty(name = { "spring.profiles.active" }, havingValue = "h2")
 	@Bean
 	public CommandLineRunner initialize(@Autowired EmployeeEntityRepository employeeRepository) {

@@ -58,6 +58,10 @@ EmployeeController.findAllEmployeesByDeptId(@PathVariable("id") Integer deptId)
 ```
 
 ### Spring Data JPA Native Query Resultset Mapping
+* Write native query in Repository. Refer **findEmployeeAndDept()** method in [EmployeeEntityRepository](src/main/java/data/jpa/repository/EmployeeEntityRepository.java)
+* Create an interface [EmployeeDepartmentEntity](src/main/java/data/jpa/entity/EmployeeDepartmentEntity.java)
+* Declare getters in interface as per getter naming conventions of columns
+* Execute query, we should get result set as proxy object of above interface
 
 ## Postman Collection
 * [data-jpa.postman_collection.json](postman-collection/data-jpa.postman_collection.json)
