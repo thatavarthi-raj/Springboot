@@ -15,23 +15,19 @@ mvn archetype:generate -DgroupId=read.properties.outside.jar -DartifactId=read-p
 gradle init --type pom
 ```
 
-## Versions
-* Maven **3.5.2**
-* Gradle **5.0**
-
 ## Steps
 * Add spring boot dependencies. Refer [pom.xml](pom.xml)
-* Declare annotation **org.springframework.context.annotation.PropertySource** on main class **read.properties.outside.jar.App**
+* Declare annotation **org.springframework.context.annotation.PropertySource** on main class [App.java](src/main/java/read/properties/outside/jar/App.java)
 * Pass JVM argument **app.properties.file** while executing jar
 ```
 -Dapp.properties.file=[projection-location]\files\application.properties
 ```
 
 ## API
-* Refer [files/read-propeties-file-outside-jar.postman_collection.json](files/read-propeties-file-outside-jar.postman_collection.json)
+* Refer [read-propeties-file-outside-jar.postman_collection.json](files/read-propeties-file-outside-jar.postman_collection.json)
 
 ## Run From Eclipse/STS
-* Right click on **read.properties.outside.jar.App**
+* Right click on [App.java](src/main/java/read/properties/outside/jar/App.java)
 * Run As - Run Configurations
 * Arguments tab - VM arguments
 * Give **-Dapp.properties.file=[projection-location]\files\application.properties**
