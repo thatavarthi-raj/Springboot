@@ -1,5 +1,8 @@
 package global.exception.handling.config;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -54,12 +57,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
 			HttpHeaders headers, HttpStatus status, WebRequest request) {
-		ErrorModel errorModel = ErrorModel.builder()
-				//.code("100")
-				//.message(ex.getMessage())
-				.value(ex.getBindingResult())
-				//.timestamp(LocalDateTime.now())
-				//.status(HttpStatus.BAD_REQUEST.value())
+		ErrorModel errorModel = ErrorModel.builder().value(ex.getBindingResult())
+				.timestamp(Timestamp.valueOf(LocalDateTime.now()).getTime()).status(HttpStatus.BAD_REQUEST.value())
 				.build();
 
 		return new ResponseEntity<>(errorModel, HttpStatus.BAD_REQUEST);

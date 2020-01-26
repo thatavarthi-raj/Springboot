@@ -85,7 +85,7 @@ public class UserService {
 	}
 
 	public Long countUserEntityByUsername(String username) {
-		return Optional.ofNullable(userRepository.countByusername(username)).orElse(0L);
+		return Optional.ofNullable(userRepository.countByUsername(username)).orElse(0L);
 	}
 
 	@Transactional
@@ -143,7 +143,7 @@ public class UserService {
 	public Boolean isUserExistByUsername(String username) {
 		username = Optional.ofNullable(username).orElseThrow(
 				utils.buildAppException(NULL_PROPERTY.getCode(), NULL_PROPERTY.getMessage(), username, USERNAME));
-		Long userCount = userRepository.countByusername(username);
+		Long userCount = userRepository.countByUsername(username);
 
 		return userCount == 0L;
 	}

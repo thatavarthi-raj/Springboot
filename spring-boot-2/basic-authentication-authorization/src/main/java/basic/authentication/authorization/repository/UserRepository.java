@@ -8,5 +8,5 @@ import basic.authentication.authorization.entity.UserEntity;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, String> {
 
-	Long countByusername(String username);
+	Long countByUsername(String username);
 }

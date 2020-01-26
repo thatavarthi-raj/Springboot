@@ -2,6 +2,7 @@ package basic.authentication.authorization.util;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Supplier;
 
@@ -41,8 +42,8 @@ public class Utils {
 					.timestamp(Timestamp.valueOf(LocalDateTime.now()).getTime())
 					.status(HttpStatus.BAD_REQUEST.value())
 					.property(buildDotSepratedString(propertiesToBeDotSeperated))
-					.path(httpServletRequest.getRequestURI())
-					.method(httpServletRequest.getMethod())
+					.path(Objects.nonNull(httpServletRequest)?httpServletRequest.getRequestURI():null)
+					.method(Objects.nonNull(httpServletRequest)?httpServletRequest.getMethod():null)
 					.build();
 			// @formatter:on
 			throw AppException.builder().errors(errorModel).build();
