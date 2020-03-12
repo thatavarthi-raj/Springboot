@@ -3,7 +3,7 @@
 ## Description
 * Spring Boot 2 Data JPA
 
-## Create project using maven command
+## Maven command
 ```
 mvn archetype:generate -DgroupId=data.jpa -DartifactId=data-jpa -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
