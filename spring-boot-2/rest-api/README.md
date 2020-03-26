@@ -6,4 +6,4 @@ mvn archetype:generate -DgroupId=com.rest.api -DartifactId=rest-api -Dversion=1.
 ```
 
 ## API
-* Import [files/spring-boot-2-maven-rest-api.postman_collection.json](files/spring-boot-2-maven-rest-api.postman_collection.json) to postman
+* Import [files/rest-api.postman_collection.json](files/rest-api.postman_collection.json) to postman
