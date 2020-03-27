@@ -47,7 +47,7 @@ mvn clean compile package
 gradlew clean compileJava build
 ```
 
-* Execute jar
+## Execute jar
 ```
 java -jar path\jar-file-name.jar
 ```
