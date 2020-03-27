@@ -1,6 +1,6 @@
 # Exception Handling 
 
-## Create project using maven
+## Maven command
 ```
 mvn archetype:generate -DgroupId=exception.handling.reponsestatus.annotation -DartifactId=exception-handling-response-status-annotation -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
