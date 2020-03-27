@@ -18,6 +18,7 @@ gradle init --type pom
 	* [ObjectNotFoundException](src/main/java/exception/handling/reponsestatus/annotation/exception/model/ObjectNotFoundException.java) 
 * Throw exception objects based on validations
 	* Refer [src/main/java/exception/handling/reponsestatus/annotation/controller/AppController.java](src/main/java/exception/handling/reponsestatus/annotation/controller/AppController.java)
+		* [src/main/java/exception/handling/reponsestatus/annotation/utils/Utils.java](src/main/java/exception/handling/reponsestatus/annotation/utils/Utils.java)
 		* utils.throwObjectNotFound()
 		* utils.throwInvalidObjectException() 
 
