@@ -12,6 +12,12 @@ gradle init --type pom
 
 ## Steps
 * Add spring boot dependencies. Refer [pom.xml](pom.xml) or [build.gradle](build.gradle)
+* Create custom exception classes. Refer [src/main/java/exception/handling/reponsestatus/annotation/exception/model](src/main/java/exception/handling/reponsestatus/annotation/exception/model)
+	* Add `org.springframework.web.bind.annotation.ResponseStatus` annotation
+* Throw exception objects based on validations
+	* Refer [src/main/java/exception/handling/reponsestatus/annotation/controller/AppController.java](src/main/java/exception/handling/reponsestatus/annotation/controller/AppController.java)
+		* utils.throwObjectNotFound()
+		* utils.throwInvalidObjectException() 
 
 ## API
 * Refer [files/exception-handling-response-status-annotation.postman_collection.json](files/exception-handling-response-status-annotation.postman_collection.json)
