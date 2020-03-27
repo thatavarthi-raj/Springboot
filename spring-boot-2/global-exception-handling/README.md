@@ -1,31 +1,25 @@
 # Spring Boot 2 Bean Validation
 
-## Create project using maven
+## Maven command
 ```
 mvn archetype:generate -DgroupId=global.exception.handling -DartifactId=global-exception-handling -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
 ## Add gradle
-```gradle command
+```
 gradle init --type pom
 ```
 
-## Dependencies
-* org.springframework.boot:spring-boot-starter-test
-* org.springframework.boot:spring-boot-starter-web
-* org.projectlombok:lombok:1.18.4
-* org.apache.commons:commons-lang3:3.4
-
 ## Description
-* All errors are in **ErrorsEnum**
-* All constants are in **Constants**
-* Exception and error models are in **global.exception.handler.error.model**
-* Build app exception - **Utils**
-* Global exception handler class - **GlobalExceptionHandler**
-* Main class - **App**
+* All errors are in [ErrorsEnum.java](src/main/java/global/exception/handling/util/ErrorsEnum.java)
+* All constants are in [Constants.java](src/main/java/global/exception/handling/util/Constants.java)
+* Exception and error models are in [src/main/java/global/exception/handling/model](src/main/java/global/exception/handling/model)
+* Build app exception - [Utils.java](src/main/java/global/exception/handling/util/Utils.java)
+* Global exception handler class - [GlobalExceptionHandler.java](src/main/java/global/exception/handling/config/GlobalExceptionHandler.java)
+* Main class - [App.java](src/main/java/global/exception/handling/App.java)
 
 ## API
-* Refer **files**
+* Refer [files/global-exception-handler.postman_collection.json](files/global-exception-handler.postman_collection.json)
 
 ## Run using maven
 * Execute following maven spring boot plugin
@@ -43,15 +37,16 @@ mvn exec:java
 gradle clean compileJava bootRun
 ```
 
-## Execute jar
-* Package using maven
+## Package using maven
 ```
 mvn clean compile package
 ```
-* Package using gradle
+
+## Package using gradle
 ```
 gradlew clean compileJava build
 ```
+
 * Execute jar
 ```
 java -jar path\jar-file-name.jar
