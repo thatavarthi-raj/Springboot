@@ -19,8 +19,8 @@ gradle init --type pom
 * Throw exception objects based on validations
 	* Refer [src/main/java/exception/handling/reponsestatus/annotation/controller/AppController.java](src/main/java/exception/handling/reponsestatus/annotation/controller/AppController.java)
 		* [src/main/java/exception/handling/reponsestatus/annotation/utils/Utils.java](src/main/java/exception/handling/reponsestatus/annotation/utils/Utils.java)
-			* utils.throwObjectNotFound()
-			* utils.throwInvalidObjectException() 
+			* throwObjectNotFound()
+			* throwInvalidObjectException() 
 
 ## API
 * Refer [files/exception-handling-response-status-annotation.postman_collection.json](files/exception-handling-response-status-annotation.postman_collection.json)
