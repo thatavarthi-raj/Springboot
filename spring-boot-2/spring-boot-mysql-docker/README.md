@@ -32,7 +32,7 @@ gradle init --type pom
 * Data scripts. Refer [data.sql](db/data.sql)
 * Select scripts. Refer [select.sql](db/select.sql)
 * Delete scripts. Refer [delete.sql](db/delete.sql)
-* Entity class [StudentEntity.java](src/main/java/springboot/mysql/docker/entity/Student)
+* Entity class [StudentEntity.java](src/main/java/springboot/mysql/docker/entity/StudentEntity.java)
 * Model class [StudentModel.java](src/main/java/springboot/mysql/docker/model/StudentModel.java)
 * Repository interface [StudentRepository.java](src/main/java/springboot/mysql/docker/repository/StudentRepository.java)
 * Controller class [AppController.java](src/main/java/springboot/mysql/docker/controller/AppController.java)
