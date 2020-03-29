@@ -1,23 +1,19 @@
 # Async Controller
 
-* Problem Statement
-```
-Consume 3 API asynchronously. Wrap 3 API calls response and return final response. 3 API calls run in parallel
-```
+## Requirement
+* Consume 3 API asynchronously
+* Wrap 3 API calls response and return final response
+* 3 API calls run in parallel
 
-## Create project using maven
+## Maven command
 ```
 mvn archetype:generate -DgroupId=async.controller -DartifactId=async-controller -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
-## Add gradle
+## Gradle command
 ```
 gradle init --type pom
 ```
-
-## Versions
-* Maven **3.5.2**
-* Gradle **5.0**
 
 ## Steps
 * Add spring boot dependencies. Refer [pom.xml](pom.xml) or [build.gradle](build.gradle)
@@ -26,19 +22,24 @@ gradle init --type pom
 * All async methods in service class return **java.util.concurrent.CompletableFuture**
 * Create **async.controller.controller.AsyncController**. Call API consuming method in service class
 
-## API
+## Postman collection
 * Refer [files/async-controller.postman_collection.json](files/async-controller.postman_collection.json)
 
 ## Run this project
 * Import project into IDE as Maven or Gradle project
-* Execute App class in each package
+* Execute [App.java](src/main/java/async/controller/App.java)
 
-## Run using maven
+## Run using maven exective plugin
+```
+mvn clean compile exec:java
+```
+
+## Run using spring boot maven plugin
 ```
 mvn clean compile spring-boot:run
 ```
 
-## Run using gradle
+## Run using spring boot gradle plugin
 ```
 gradlew clean compileJava bootRun
 ```
