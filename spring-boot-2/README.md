@@ -37,3 +37,5 @@
 * [Mulitiple Profiles in Single Yaml File](multiple-profile-in-one-yaml)
 * [War Deploy To Tomcat 9](war-to-tomacat9)
 * [Global Filters Exception Handling](global-filters-exception-handling)
+* [Spring Boot Hateoas](spring-boot-hateoas)
+* [Spring Boot MySql Docker](spring-boot-mysql-docker)
