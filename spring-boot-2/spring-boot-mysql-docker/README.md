@@ -61,3 +61,5 @@ gradlew clean compileJava build
 ```
 java -jar build\libs\spring-boot-mysql-docker-1.0.jar
 ```
+
+docker run -it -p 9000:9000 spring-boot-mysql-docker --link mysql-docker-localhost:mysql
