@@ -1,7 +1,7 @@
 server.port: 9000 
 
 spring:  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver    url: jdbc:mysql://mysql-docker-localhost:3306/practice?useSSL=false&verifyServerCertificate=false&noAccessToProcedureBodies=true
+    driver-class-name: com.mysql.cj.jdbc.Driver    url: jdbc:mysql://mysql-docker:3306/practice
     username: practice_admin
     password: practice_admin
   jpa:    show-sql: true

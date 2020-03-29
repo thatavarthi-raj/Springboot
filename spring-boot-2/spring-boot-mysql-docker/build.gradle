@@ -19,6 +19,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-devtools'
+	compile 'commons-beanutils:commons-beanutils:1.9.4'
 	
 	compile "org.projectlombok:lombok:1.18.4"
 	compileOnly "org.projectlombok:lombok:1.18.4"

@@ -1,3 +1,5 @@
+# This application is in progeress.. 
+
 ## Spring Boot MySql Docker
 
 ### Requirement
@@ -26,6 +28,16 @@ gradle init --type pom
 ## Run this project
 * Import project into IDE as Maven or Gradle project
 * Execute [App.java](src/main/java/springboot/mysql/docker/App.java)
+* Table create scripts. Refer [schema.sql](db/schema.sql)
+* Data scripts. Refer [data.sql](db/data.sql)
+* Select scripts. Refer [select.sql](db/select.sql)
+* Delete scripts. Refer [delete.sql](db/delete.sql)
+* Entity class [StudentEntity.java](src/main/java/springboot/mysql/docker/entity/Student)
+* Model class [StudentModel.java](src/main/java/springboot/mysql/docker/model/StudentModel.java)
+* Repository interface [StudentRepository.java](src/main/java/springboot/mysql/docker/repository/StudentRepository.java)
+* Controller class [AppController.java](src/main/java/springboot/mysql/docker/controller/AppController.java)
+* Yaml file [application.yml](src/main/resources/application.yml)
+* [Dockerfile](Dockerfile)
 
 ## Run using maven exective plugin
 ```
@@ -62,4 +74,28 @@ gradlew clean compileJava build
 java -jar build\libs\spring-boot-mysql-docker-1.0.jar
 ```
 
-docker run -it -p 9000:9000 spring-boot-mysql-docker --link mysql-docker-localhost:mysql
+## Run as Docker Container
+* Create package
+```
+mvn clean compile package
+```
+* Build docker image
+```
+docker build . -t spring-boot-mysql-docker
+```
+* Run container
+```
+docker run -it -p 9000:9000 spring-boot-mysql-docker --link mysql-docker:mysql
+```
+* Check all containers
+```
+docker ps --all
+```
+* Remove container
+```
+docker rm [container-id]
+```
+* Remove image
+```
+docker rmi spring-boot-mysql-docker
+```
