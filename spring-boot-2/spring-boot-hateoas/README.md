@@ -1,4 +1,4 @@
-## Spring Boot Hateos
+## Spring Boot Hateoas
 
 ### Maven command
 ```
