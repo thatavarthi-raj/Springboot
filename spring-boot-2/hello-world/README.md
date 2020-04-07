@@ -1,30 +1,20 @@
-# Spring Boot Hello World
+# Spring Boot 2 Hello World
 
-## Create project using maven
+## Maven command
 ```
 mvn archetype:generate -DgroupId=com.hello.world -DartifactId=hello-world -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
-## Add gradle
+## Gradle command
 ```
 gradle init --type pom
 ```
-
-## Versions
-* Maven version: **3.6.2**
-* Gradle version: **5.0**
-
-## Dependencies
-* spring-boot-parent:2.1.7.RELEASE
-* spring-boot-starter-web
-* spring-boot-starter-test
-
 ## Classes
-* App
-* AppController
+* [App.java](src/main/java/com/hello/world/App.java)
+* [AppController.java](src/main/java/com/hello/world/controller/AppController.java)
 
 ## Postman collection
-* Refer **files/spring-boot-2-maven-hello-world.postman_collection.json**
+* Refer [files/spring-boot-2-maven-hello-world.postman_collection.json](files/spring-boot-2-maven-hello-world.postman_collection.json)
 
 ## Exception
 * Exception Description
