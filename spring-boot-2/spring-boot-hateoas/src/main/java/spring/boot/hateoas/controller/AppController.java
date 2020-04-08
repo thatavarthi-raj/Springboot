@@ -48,7 +48,6 @@ public class AppController {
 
 		Resource<Student> resource = new Resource<>(student);
 
-
 		return ResponseEntity.created(uri).body(student);
 	}
 
