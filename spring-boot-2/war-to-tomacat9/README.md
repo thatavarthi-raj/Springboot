@@ -80,7 +80,7 @@ gradlew clean build
 ```
 * Copy **build/libs/war-to-tomacat9.war** to **Tomcat/../webapps** folder
 
-## Pass spring profile as argument from tomcat
+## Pass spring active profile as argument from tomcat
 ### Solution 1
 * Add profiles in [src/main/resources/application.yml](src/main/resources/application.yml)
 * Double click on tomcat configured in STS/Eclipse
