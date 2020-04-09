@@ -18,8 +18,8 @@ gradle init --type pom
 ```
 
 ## Steps
-* Make **spring-boot-starter-tomcat** as provided
-* Maven - [pom.xml](pom.xml)
+* Make `spring-boot-starter-tomcat` as provided
+* Refer - [pom.xml](pom.xml)
 ```
 <dependency>
 	<groupId>org.springframework.boot</groupId>
@@ -27,28 +27,29 @@ gradle init --type pom
 	<scope>provided</scope>
 </dependency>
 ```
-* Gradle - [build.gradle](build.gradle)
+* Refer - [build.gradle](build.gradle)
 ```
 providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 ```
-* Make package type as War
-* Maven - [pom.xml](pom.xml)
+* Make package type as `war`
+* Refer - [pom.xml](pom.xml)
 ```
 <packaging>war</packaging>
 ```
-* Gradle - [build.gradle](build.gradle)
+* Refer - [build.gradle](build.gradle)
 ```
 apply plugin: 'war'
 ```
-* Main class extends **SpringBootServletInitializer** and override **configure(SpringApplicationBuilder builder)** method. Refer [src/main/java/com/spring/boot2/war/tomcat9/App.java](src/main/java/com/spring/boot2/war/tomcat9/App.java)
-* Declare JNDI in Tomcat 9. Open **Tomcat-installation-directory/conf/context.xml** give following entry
+* Main class extends `SpringBootServletInitializer` and override `configure(SpringApplicationBuilder builder)` method. Refer [src/main/java/com/spring/boot2/war/tomcat9/App.java](src/main/java/com/spring/boot2/war/tomcat9/App.java)
+* Declare JNDI in Tomcat 9
+	* Open `Tomcat-installation-directory/conf/context.xml` give following entry
 ```
 <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" global="jdbc/MyDB" 
     	maxTotal="100" maxIdle="20" maxWaitMillis="10000" minIdle="5" name="jdbc/MyDB" 
     	password="your-db-password" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/practice" 
     	username="your-db-username"/>
 ```
-* Use JNDI in [src/main/resources/application.properties](src/main/resources/application.properties)
+* Use JNDI in [src/main/resources/application.yml](src/main/resources/application.yml)
 ```
 spring.datasource.jndi-name=java:comp/env/jdbc/MyDB
 ```
@@ -78,3 +79,22 @@ mvn clean package
 gradlew clean build
 ```
 * Copy **build/libs/war-to-tomacat9.war** to **Tomcat/../webapps** folder
+
+## Pass spring profile as argument from tomcat
+### Solution 1
+* Add profiles in [src/main/resources/application.yml](src/main/resources/application.yml)
+* Double click on tomcat configured in STS/Eclipse
+* Click `Open launch configuration`
+* Go to `Arguments` tab
+* Give following entry in `VM arguments:`
+```
+-Dspring.profiles.active=localhost
+```
+![picture](images/tomcat-launch-configuration.jpg)
+
+### Solution 2
+* Add profiles in [src/main/resources/application.yml](src/main/resources/application.yml)
+* Give following entry in file `tomcat-home/conf/catalina.properties`
+```
+spring.profiles.active=dev
+```
