@@ -91,6 +91,7 @@ gradlew clean build
 -Dspring.profiles.active=localhost
 ```
 ![picture](images/tomcat-launch-configuration.jpg)
+* Change profile value and hit `first-name` API in [files/war-to-tomacat9.postman_collection.json](files/war-to-tomacat9.postman_collection.json)
 
 ### Solution 2
 * Add profiles in [src/main/resources/application.yml](src/main/resources/application.yml)
@@ -98,3 +99,4 @@ gradlew clean build
 ```
 spring.profiles.active=dev
 ```
+* Change profile value and hit `first-name` API in [files/war-to-tomacat9.postman_collection.json](files/war-to-tomacat9.postman_collection.json)
