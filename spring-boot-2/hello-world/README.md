@@ -9,9 +9,10 @@ mvn archetype:generate -DgroupId=com.hello.world -DartifactId=hello-world -Dvers
 ```
 gradle init --type pom
 ```
-## Classes
+## Files
 * [App.java](src/main/java/com/hello/world/App.java)
 * [AppController.java](src/main/java/com/hello/world/controller/AppController.java)
+* Dependencies [pom.xml](pom.xml) (or) [build.gradle](build.gradle)
 
 ## Postman collection
 * Refer [files/spring-boot-2-maven-hello-world.postman_collection.json](files/spring-boot-2-maven-hello-world.postman_collection.json)
