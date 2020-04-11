@@ -4,6 +4,7 @@
 * [Basic Authentication Authorization API With MySQL DB](basic-authentication-authorization)
 * [Hibernate Bean Validation](bean-validation)
 * [Spring Boot 2 Circle CI Integration](circle-ci)
+* [Dynamic Filtering](dynamic-filtering)
 * [Hello-World](hello-world)
 * [Hello World Using Spring Initializer](hello-world-using-spring-initializer)
 * [Internationalization](internationalization)
