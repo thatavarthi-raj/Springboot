@@ -16,7 +16,7 @@ gradle init --type pom
 * Add [log4j.properties](src/main/resources/log4j.properties)
 * Add [messages.properties](src/main/resources/messages.properties) for english messages
 * Add [messages_fr.properties](src/main/resources/messages_fr.properties) for french messages
-* Create `LocaleResolver` and `ResourceBundleMessageSource` beans. Refer [AppConfig.java](src/main/java/internationalization/controller/AppController.java)
+* Create `LocaleResolver` and `ResourceBundleMessageSource` beans. Refer [AppConfig.java](src/main/java/internationalization/config/AppConfig.java)
 * Inject `MessageSource` to [AppController](src/main/java/internationalization/controller/AppController.java)
 * Pass required `Locale`  as `Accept-Language` header. Get message using `messageSource.getMessage`
 ```
