@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "87c1b38f-6ce0-41d7-b3d7-3217dbde4e48",
+		"_postman_id": "0749cea0-5e2f-4acd-b368-27b10dfa95f9",
 		"name": "internationalization",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -46,59 +46,109 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "french-greet",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"value": "fr",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:9000/greet",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"greet"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "us-greet",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept-Language",
-								"type": "text",
-								"value": "us"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:9000/greet",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"greet"
-							]
-						}
-					},
-					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "french-greet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "fr",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/greet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"greet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "french-greet2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "fr"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/greet2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"greet2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "us-greet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "us"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/greet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"greet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "us-greet2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"type": "text",
+						"value": "us"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/greet2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"greet2"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
