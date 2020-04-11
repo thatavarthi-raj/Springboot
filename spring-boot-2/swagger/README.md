@@ -15,7 +15,7 @@ gradle init --type pom
     * springfox-swagger2
     * springfox-swagger-ui
 * Create [SwaggerConfig.java](src/main/java/swagger/config/SwaggerConfig.java)
-    * Enable swagger using annotation `import springfox.documentation.swagger2.annotations.EnableSwagger2`
+    * Declare `@EnableSwagger2` annotation on [SwaggerConfig.java](src/main/java/swagger/config/SwaggerConfig.java) to enable swagger
     * Create `Docket` bean
 * Create [AppController.java](src/main/java/swagger/controller/AppController.java)
 * Run [App.java](src/main/java/swagger/App.java)
