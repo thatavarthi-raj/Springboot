@@ -51,3 +51,38 @@ spring:
 ```
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
 ```
+
+## Run using maven executive plugin
+```
+mvn clean compile exec:java
+```
+
+## Run using spring boot maven plugin
+```
+mvn clean compile spring-boot:run
+```
+
+## Run using spring boot gradle plugin
+```
+gradlew clean compileJava bootRun
+```
+
+## Create package using maven
+```
+mvn clean compile package
+```
+
+## Execute jar of Maven
+```
+java -jar target\hello-world.jar
+```
+
+## Create package using gradle
+```
+gradlew clean compileJava build
+```
+
+## Execute jar of Gradle
+```
+java -jar build\libs\hello-world-1.0.jar
+```

@@ -4,7 +4,7 @@ plugins {
     id 'java'
 }
 
-group = 'async.controller'
+group = 'hello.world'
 version = '1.0'
 
 sourceCompatibility = '1.8'
@@ -17,6 +17,8 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-devtools'
 
     compile "org.projectlombok:lombok:1.18.4"
     compileOnly "org.projectlombok:lombok:1.18.4"
