@@ -23,7 +23,8 @@ public class AppHealthIndicator implements HealthIndicator {
 
 	private Boolean isServiceRunning() {
 		// actual business logic here and return true/false
-		if (httpServletRequest.getParameter("status").equalsIgnoreCase("0"))
+		if (null != httpServletRequest.getParameter("status") &&
+				httpServletRequest.getParameter("status").equalsIgnoreCase("0"))
 			return Boolean.FALSE;
 		else
 			return Boolean.TRUE;

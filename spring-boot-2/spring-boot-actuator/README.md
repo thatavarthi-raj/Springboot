@@ -40,6 +40,15 @@ info.java-vendor = ${java.specification.vendor}
 * Refer [InfoContributorComponent.java](src/main/java/spring/boot/actuator/component/InfoContributorComponent.java)
 * Check `info` API in [spring-boot-actuator.postman_collection.json](files/spring-boot-actuator.postman_collection.json)
 
+## Spring boot actuator hal browser
+* Add `spring-data-rest-hal-browser` dependency in [pom.xml](pom.xml) (or) [build.gradle](build.gradle)
+* Start the application. Run [App.java](src/main/java/spring/boot/actuator/App.java)
+* open - http://localhost:9000/browser/index.html
+    * Here we can see all actuator end points in UI
+    * In **Explorer** enter `/actuator` press `Go` button
+    * We can access actuator end points from here
+![picture](images/hal-browser-ui.jpg)
+
 ## Postman Collection
 * Refer [spring-boot-actuator.postman_collection.json](files/spring-boot-actuator.postman_collection.json)
 
