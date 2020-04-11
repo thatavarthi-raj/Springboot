@@ -5,12 +5,12 @@
 Spring Boot Scheduler implementation
 ```
 
-## Create project using maven
+## Maven command
 ```
 mvn archetype:generate -DgroupId=scheduling -DartifactId=scheduling -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false 
 ```
 
-## Add gradle
+## Gradle command
 ```
 gradle init --type pom
 ```
@@ -20,7 +20,7 @@ gradle init --type pom
 * Declare annotation **org.springframework.scheduling.annotation.EnableScheduling** on main class [src/main/java/scheduling/App.java](src/main/java/scheduling/App.java)
 
 ## Cron Scheduling Component
-* Used define scheduler with cron expression
+* User define scheduler with cron expression
 * Refer [src/main/java/scheduling/component/CronComponent.java](src/main/java/scheduling/component/CronComponent.java)
 
 ## Fixed Rate Scheduling Component
