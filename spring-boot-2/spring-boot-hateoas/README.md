@@ -1,5 +1,9 @@
 # Spring Boot Hateoas
 
+## Requirement
+* When we insert new record in DB return API path to get that record in response headers
+* When we call any API return related HATEOAS link
+
 ## Maven command
 ```
 mvn archetype:generate -DgroupId=spring.boot.hateoas -DartifactId=spring-boot-hateoas -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
@@ -44,6 +48,20 @@ return resource;
 ## Files
 * [AppController.java](src/main/java/spring/boot/hateoas/controller/AppController.java)
 * Dependencies - [pom.xml](pom.xml) (or) [build.gradle](build.gradle)
+
+## When we insert new record in DB return API path to get that record in response headers
+* Refer `saveStudent()` method in [AppController.java](src/main/java/spring/boot/hateoas/controller/AppController.java)
+```
+URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(id).toUri();
+```
+
+## When we call any API return related HATEOAS link
+* Refer `findStudent(..)` method in [AppController.java](src/main/java/spring/boot/hateoas/controller/AppController.java)
+```
+Resource<Student> resource = new Resource<>(resultStudent);
+ControllerLinkBuilder linkTo = ControllerLinkBuilder.linkTo(ControllerLinkBuilder.methodOn(this.getClass()).findAllStudent());
+resource.add(linkTo.withRel("find-all-students"));
+```
 
 ## Run using maven executive plugin
 ```
