@@ -1,21 +1,30 @@
-# Spring Boot 2 Data JPA
+# Spring Boot 2 Data JPA Practice Examples
 
-## Description
-* Spring Boot 2 Data JPA
+## Requirement
+* Spring Boot 2 Data JPA Practice Examples
 
 ## Maven command
 ```
 mvn archetype:generate -DgroupId=data.jpa -DartifactId=data-jpa -Dversion=1.0 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
-## Convert maven to gradle project
+## Gradle command
 ```
 gradle init --type pom
 ```
 
+## Dependencies
+* Refer [pom.xml](pom.xml) or [build.gradle](build.gradle)
+
 ## Active Profiles
-* **spring.profiles.active=mysql** in **application.properties** connects to MySQL DB
-* **spring.profiles.active=h2** in **application.properties** connect to in memory H2 DB
+* To connect to MySQL, update [application.properties](src/main/resources/application.properties) with following property
+```
+spring.profiles.active=mysql
+```
+* To connect to in memory H2, update [application.properties](src/main/resources/application.properties) with following property
+```
+spring.profiles.active=h2
+```
 
 ## SQL Files
 * [Create DB](https://github.com/avinashbabudonthu/sql/blob/master/mysql/create-db-and-user.sql)
