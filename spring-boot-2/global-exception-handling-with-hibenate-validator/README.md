@@ -1,4 +1,4 @@
-# Spring Boot 2 Bean Validation
+# Spring Boot 2 Global Exception Handling with Hibernate Bean Validator
 
 ## Create project using maven
 ```
@@ -6,7 +6,7 @@ mvn archetype:generate -DgroupId=global.exception.handling -DartifactId=global-e
 ```
 
 ## Add gradle
-```gradle command
+```
 gradle init --type pom
 ```
 

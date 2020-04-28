@@ -26,7 +26,7 @@ public class Utils {
                     .code(code)
                     .message(message)
                     .value(value)
-                    .timestamp(LocalDateTime.now())
+                    .timestamp(Timestamp.valueOf(LocalDateTime.now()).getTime())
                     .status(HttpStatus.BAD_REQUEST.value())
                     .property(buildDotSepratedString(propertiesToBeDotSeperated))
                     .path(httpServletRequest.getRequestURI())

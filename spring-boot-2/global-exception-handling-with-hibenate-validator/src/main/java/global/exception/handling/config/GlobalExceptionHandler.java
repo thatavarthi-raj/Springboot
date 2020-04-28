@@ -23,11 +23,11 @@ import lombok.extern.slf4j.Slf4j;
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(value = { AppException.class })
-	protected ResponseEntity<Object> handleException(AppException runtimeException, WebRequest webRequest) {
+	protected ResponseEntity<Object> handleException(AppException appException, WebRequest webRequest) {
 		ExceptionModel exceptionModel = null;
 		try {
-			log.error(ErrorsEnum.BAD_REQUEST_EXCEPTION.getMessage(), runtimeException);
-			exceptionModel = ExceptionModel.builder().errors(runtimeException.getErrors()).build();
+			log.error(ErrorsEnum.BAD_REQUEST_EXCEPTION.getMessage(), appException);
+			exceptionModel = ExceptionModel.builder().errors(appException.getErrors()).build();
 		} catch (Exception e) {
 			log.error(ErrorsEnum.ERROR_WHILE_PARSING_ERROR_MESSAGE.getMessage(), e);
 			ErrorModel errorModel = ErrorModel.builder().code(ErrorsEnum.ERROR_WHILE_PARSING_ERROR_MESSAGE.getCode())
@@ -35,8 +35,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 			exceptionModel = ExceptionModel.builder().errors(errorModel).build();
 		}
 
-		return handleExceptionInternal(runtimeException, exceptionModel, new HttpHeaders(), HttpStatus.BAD_REQUEST,
-				webRequest);
+		HttpStatus httpStatus = null == appException.getHttpStatus() ? HttpStatus.BAD_REQUEST : appException.getHttpStatus();
+		return handleExceptionInternal(appException, exceptionModel, new HttpHeaders(), httpStatus, webRequest);
 	}
 
 	/**

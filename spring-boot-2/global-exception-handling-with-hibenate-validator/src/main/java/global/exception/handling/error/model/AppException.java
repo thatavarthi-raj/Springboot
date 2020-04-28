@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.springframework.http.HttpStatus;
 
 @Data
 @Builder
@@ -15,6 +16,7 @@ public class AppException extends RuntimeException {
 
 	private static final long serialVersionUID = 4182294436606075029L;
 	private Object errors;
+	private HttpStatus httpStatus;
 
 	@Override
 	public String getMessage() {
