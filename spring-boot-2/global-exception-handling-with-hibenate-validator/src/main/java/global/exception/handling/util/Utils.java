@@ -33,7 +33,7 @@ public class Utils {
                     .method(httpServletRequest.getMethod())
                     .build();
             // @formatter:on
-            throw AppException.builder().errors(errorModel).build();
+            throw AppException.builder().errors(errorModel).httpStatus(HttpStatus.BAD_REQUEST).build();
         };
     }
 
