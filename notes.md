@@ -91,3 +91,11 @@ public class PurchaseOrderController {
 * So spring boot auto configures `DispatcherServlet` using `DispatcherServletAutoConfiguration`
 * All REST requests will reach to `DispatcherServlet`
 * `DispatcherServlet` follows `Frontend controller` pattern
+
+## Get Port number of application
+```
+@Autowired
+private org.springframework.core.env.Environment environment;
+
+String port = environment.getProperty("local.server.port");
+```
