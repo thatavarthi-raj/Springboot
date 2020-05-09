@@ -10,6 +10,11 @@ mvn archetype:generate -DgroupId=spring.boot.actuator -DartifactId=spring-boot-a
 gradle init --type pom
 ```
 
+## Property to disable security on actuator end points
+```
+management.security.enabled=false
+```
+
 ## Steps
 * Add dependency. Refer [pom.xml](pom.xml) (or) [build.gradle](build.gradle)
     * spring-boot-starter-actuator
