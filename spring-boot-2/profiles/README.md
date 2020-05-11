@@ -10,33 +10,42 @@ mvn archetype:generate -DgroupId=spring.boot.profiles -DartifactId=profiles -Dve
 gradle init --type pom
 ```
 
-## Versions
-* Maven **3.5.2**
-* Gradle **5.0**
-
 ## Dependencies
-* org.springframework:spring-boot-starter-web:2.1.8.RELEASE
+* Refer [pom.xml](pom.xml) or [build.gradle](build.gradle)
 
-## Steps
-* Create **application.properties** file in src/main/resources
-* Create **application-dev.properties** file in src/main/resources
-* Create **application-test.properties** file in src/main/resources
-* Create **application-prod.properties** file in src/main/resources
-* Add **spring.profiles.active=prod** in application.properties
-* Based on property above respective **application-{profile}.properties** will picked by spring boot
+## Steps with properties files
+* Copy properties from [files/properties](files/properties) to [src/main/resources](src/main/resources)
+* Change [spring.profiles.active] to `dev` and start the application. Run [App.java](src/main/java/spring/boot/profiles/App.java)
+	* Now application will start in `9090`
+* Change [spring.profiles.active] to `test` and start the application. Run [App.java](src/main/java/spring/boot/profiles/App.java)
+	* Now application will start in `9091`
+* Change [spring.profiles.active] to `prod` and start the application. Run [App.java](src/main/java/spring/boot/profiles/App.java)
+	* Now application will start in `9092`
+	
+## Steps with yaml file
+* Copy `application.yml` from [files/yaml](files/yaml) to [src/main/resources](src/main/resources)
+* Change `spring.profiles.active` property value to - `default`, `dev`, `test`, `prod`
+* Run [App.java](src/main/java/spring/boot/profiles/App.java)
+* We can see application running in different port based on active profile
 
 ## Run this project
 * Import project into IDE as Maven or Gradle project
-* Execute **spring.boot.profiles.App**
+* Execute [App.java](src/main/java/spring/boot/profiles/App.java)
 
 ## Run using maven
 ```
 mvn clean compile spring-boot:run
 ```
+```
+mvn clean compile spring-boot:run -Dspring-boot.run.arguments=--spring.profiles.active=dev
+```
 
 ## Run using gradle
 ```
 gradlew clean compileJava bootRun
+```
+```
+gradlew clean compileJava bootRun -Dspring-boot.run.arguments=--spring.profiles.active=dev
 ```
 
 ## Execute jar created with maven
@@ -46,7 +55,7 @@ mvn clean compile package
 ```
 * Execute jar
 ```
-java -jar target/profiles.jar
+java -jar -Dspring.profiles.active=dev target/profiles.jar
 ```
 
 ## Execute jar created with gradle
@@ -56,5 +65,5 @@ gradlew clean build
 ```
 * Execute jar
 ```
-java -jar build/libs/profiles.jar
+java -jar -Dspring.profiles.active=dev build/libs/profiles.jar
 ```
