@@ -99,3 +99,92 @@ private org.springframework.core.env.Environment environment;
 
 String port = environment.getProperty("local.server.port");
 ```
+
+## Command Line Argument in Spring Boot
+### Command Line Arguments Spring Boot 1.x while running with Maven plugin
+* Pass argument using -Drun.arguments
+```
+mvn spring-boot:run -Drun.arguments=--appArgument=appArgumentValue
+```
+* Pass multiple arguments as comma separated
+	* Arguments should be comma separated
+	* Each argument should be prefixed with `--`
+	* We can also pass configuration properties, like `spring.main.banner-mode`
+```
+mvn spring-boot:run -Drun.arguments=--spring.main.banner-mode=off,--appArgument=appArgumentValue
+```
+### Command Line Arguments Spring Boot 2.x while running with Maven plugin
+* Pass the arguments using -Dspring-boot.run.arguments
+```
+mvn spring-boot:run -Dspring-boot.run.arguments=--spring.main.banner-mode=off,--appArgument=appArgumentValue
+```
+### Command Line Arguments while running with Maven plugin
+* Add `bootRun` task in `build.gradle`
+```
+bootRun {
+    if (project.hasProperty('args')) {
+        args project.args.split(',')
+    }
+}
+```
+* Pass arguments
+```
+gradlew bootRun -Pargs=--spring.main.banner-mode=off,--appArgument=appArgumentValue
+```
+### We can overriding system properties like below by passing as command line arguments
+```
+server.port=9090
+spring.application.name=student-service
+```
+* Spring Boot 1.x
+```
+mvn spring-boot:run -Drun.arguments=--server.port=9090
+gradlew bootRun -Pargs=--server.port=9090
+```
+* Spring Boot 2.x
+```
+mvn spring-boot:run -Dspring-boot.run.arguments=--server.port=9090
+gradlew bootRun -Pargs=--server.port=9090
+```
+### short command line arguments
+* Spring Boot converts command-line arguments to properties and adds them as environment variables
+* We can use short command-line arguments –port=9090 instead of –server.port=9090 by using a placeholder in our application.properties
+```
+server.port=${port:8080}
+```
+* Command-line arguments take precedence over application.properties values
+### Stop our application from converting command-line arguments to properties
+```
+@SpringBootApplication
+public class Application extends SpringBootServletInitializer {
+    public static void main(String[] args) {
+        SpringApplication application = new SpringApplication(Application.class);
+        application.setAddCommandLineProperties(false);
+        application.run(args);
+    }
+}
+```
+### Accessing Command Line Arguments
+```
+@SpringBootApplication
+public class Application extends SpringBootServletInitializer {
+    public static void main(String[] args) {
+        for(String arg:args) {
+            System.out.println(arg);
+        }
+        SpringApplication.run(Application.class, args);
+    }
+}
+```
+### Passing Command-Line Arguments to the SpringBootTest
+* With the release of Spring Boot 2.2, we gained the possibility to inject command-line arguments during testing using @SpringBootTest and its args attribute
+```
+@SpringBootTest(args = "--spring.main.banner-mode=off")
+public class ApplicationTest {
+ 
+    @Test
+    public void whenUsingSpringBootTestArgs_thenCommandLineArgSet(@Autowired Environment env) {
+        Assertions.assertThat(env.getProperty("spring.main.banner-mode")).isEqualTo("off");
+    }
+}
+```
