@@ -148,7 +148,7 @@ gradlew bootRun -Pargs=--server.port=9090
 ```
 ### short command line arguments
 * Spring Boot converts command-line arguments to properties and adds them as environment variables
-* We can use short command-line arguments –port=9090 instead of –server.port=9090 by using a placeholder in our application.properties
+* We can use short command-line arguments `–port=9090` instead of `–server.port=9090` by using a placeholder in our application.properties
 ```
 server.port=${port:8080}
 ```
