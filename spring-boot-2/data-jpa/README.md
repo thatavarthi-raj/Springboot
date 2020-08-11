@@ -34,10 +34,8 @@ spring.profiles.active=h2
 * [Drop scripts](https://github.com/avinashbabudonthu/sql/blob/master/mysql/drop-queries.sql)
 * [Select queries](https://github.com/avinashbabudonthu/sql/blob/master/mysql/select-queries.sql)
 * [Stored Procedures](https://github.com/avinashbabudonthu/sql/blob/master/mysql/stored-procedures.sql)
-```
-find_all_employees()
-find_employee_by_dept_id(in dept_id_in int)
-```
+	* find_all_employees()
+	* find_employee_by_dept_id(in dept_id_in int)
 
 ## Examples
 * [Execute stored procedure - 0 in params, n out params](#execute-stored-procedure-returns-multiple-columns-and-return-model-list)

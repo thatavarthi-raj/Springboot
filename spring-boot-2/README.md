@@ -21,7 +21,6 @@
 * [Global Exception Handling](global-exception-handling)
 * [Global Exception Handling with Hibernate Validation](global-exception-handling-with-hibenate-validator)
 * [GraphQl](graphql)
-
 * [Docker image with maven plugin](docker-with-maven-pugin)
 * [Jetty Server](embedded-jetty)
 * [Log4J2 Logging](log4j-logging)
@@ -45,3 +44,4 @@
 * [Versioning](versioning)
 * [War Deploy To Tomcat 9](war-to-tomacat9)
 * [Spring Boot Docker Container Connecting To MySQL Running in Local or AWS RDS](spring-boot-docker-mysql-localhost)
+* [prometheus-grafana](prometheus-grafana)
