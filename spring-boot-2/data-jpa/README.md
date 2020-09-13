@@ -43,6 +43,7 @@ spring.profiles.active=h2
 * [Spring Data JPA Native Query Resultset Mapping](#spring-data-jpa-native-query-resultset-mapping)
 * [Find All Employee By Pagination](#find-all-employee-by-pagination)
 * [Sort By More Than One Property](#sort-by-more-than-one-property)
+* [Delete multiple records by id list](#delete-multiple-records-by-id-list)
 
 ### Execute stored procedure returns multiple columns and return model list
 * Create stored procedure **[find_all_employees](https://github.com/avinashbabudonthu/sql/blob/master/mysql/stored-procedures.sql)**
@@ -85,6 +86,9 @@ EmployeeController.findAllEmployeesByDeptId(@PathVariable("id") Integer deptId)
 * Create `Pageable` object
 * Query DB
 * Refer `findEmployeeModelListAllSortByENameAscAndSalaryDesc` method in [EmployeeService](src/main/java/data/jpa/service/EmployeeService.java)
+
+### Delete multiple records by id list
+* Refer `deleteStudentEntityListByIdList` method in [StudentService](src/main/java/data/jpa/service/StudentService.java)
 
 ## Postman Collection
 * [data-jpa.postman_collection.json](postman-collection/data-jpa.postman_collection.json)
