@@ -17,12 +17,16 @@ import javax.persistence.SqlResultSetMapping;
 import javax.persistence.SqlResultSetMappings;
 import javax.persistence.Table;
 
+import org.apache.commons.beanutils.BeanUtils;
+
 import data.jpa.model.EmployeeDeptModel;
+import data.jpa.model.EmployeeModel;
 import data.jpa.util.Constants;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.SneakyThrows;
 
 @Data
 @Builder
@@ -93,5 +97,12 @@ public class EmployeeEntity {
 	@ManyToOne
 	@JoinColumn(name = "DEPTNO", referencedColumnName = "DEPTNO")
 	private DepartmentEntity department;
+
+	@SneakyThrows
+	public EmployeeModel buildModel() {
+		EmployeeModel employeeModel = new EmployeeModel();
+		BeanUtils.copyProperties(employeeModel, this);
+		return employeeModel;
+	}
 
 }

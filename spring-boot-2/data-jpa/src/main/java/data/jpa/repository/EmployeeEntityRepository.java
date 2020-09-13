@@ -14,4 +14,5 @@ public interface EmployeeEntityRepository extends JpaRepository<EmployeeEntity, 
 
 	@Query(nativeQuery = true, value = "select e.empno, e.ename, e.deptno, d.dname, d.loc, e.job, e.sal from emp e join dept d on e.deptno = d.deptno")
 	List<EmployeeDepartmentEntity> findEmployeeAndDept();
+
 }
