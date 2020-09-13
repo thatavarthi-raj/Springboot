@@ -41,6 +41,8 @@ spring.profiles.active=h2
 * [Execute stored procedure - 0 in params, n out params](#execute-stored-procedure-returns-multiple-columns-and-return-model-list)
 * [Execute stored procedure - 1 in param, n out params](#execute-stored-procedure-with-one-in-param-multiple-out-params)
 * [Spring Data JPA Native Query Resultset Mapping](#spring-data-jpa-native-query-resultset-mapping)
+* [Find All Employee By Pagination](#find-all-employee-by-pagination)
+* [Sort By More Than One Property](#sort-by-more-than-one-property)
 
 ### Execute stored procedure returns multiple columns and return model list
 * Create stored procedure **[find_all_employees](https://github.com/avinashbabudonthu/sql/blob/master/mysql/stored-procedures.sql)**
@@ -69,6 +71,20 @@ EmployeeController.findAllEmployeesByDeptId(@PathVariable("id") Integer deptId)
 * Create an interface [EmployeeDepartmentEntity](src/main/java/data/jpa/entity/EmployeeDepartmentEntity.java)
 * Declare getters in interface as per getter naming conventions of columns
 * Execute query, we should get result set as proxy object of above interface
+
+### Find All Employee By Pagination
+* Get `page`, `size` as request parameters
+* Validate and assign default value if any value is passed as null
+* Create `Pageable` object
+* Query DB
+* Refer `findEmployeeModelListAllByPagination` method in [EmployeeService](src/main/java/data/jpa/service/EmployeeService.java)
+
+### Sort By More Than One Property
+* Prepare multiple `Sort.Order` objects
+* Add them to list
+* Create `Pageable` object
+* Query DB
+* Refer `findEmployeeModelListAllSortByENameAscAndSalaryDesc` method in [EmployeeService](src/main/java/data/jpa/service/EmployeeService.java)
 
 ## Postman Collection
 * [data-jpa.postman_collection.json](postman-collection/data-jpa.postman_collection.json)
