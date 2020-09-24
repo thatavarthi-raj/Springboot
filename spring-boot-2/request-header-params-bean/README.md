@@ -16,7 +16,7 @@ gradle init --type pom
 
 ## Files
 * Main class - [App.java](src/main/java/com/app/App.java)
-* Controller class - [RequestParamsController.java](src/main/java/com/app/controller/RequestParamsController.java)
+* Controller class - [AppController.java](src/main/java/com/app/controller/AppController.java)
 * Model classes
 	* [RequestParamsModel.java](src/main/java/com/app/model/RequestParams.java)
 * Util classes

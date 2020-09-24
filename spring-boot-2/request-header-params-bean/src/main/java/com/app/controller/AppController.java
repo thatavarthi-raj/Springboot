@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-public class RequestParamsController {
+public class AppController {
 
 	@GetMapping(value = "/request-params", produces = MediaType.APPLICATION_JSON_VALUE)
 	public RequestParamsModel requestParams(RequestParamsModel requestParamsModel) {
