@@ -18,7 +18,7 @@ gradle init --type pom
 * Main class - [App.java](src/main/java/com/app/App.java)
 * Controller class - [AppController.java](src/main/java/com/app/controller/AppController.java)
 * Model classes
-	* [RequestParamsModel.java](src/main/java/com/app/model/RequestParams.java)
+	* [RequestParamsModel.java](src/main/java/com/app/model/RequestParamsModel.java)
 * Util classes
 	* [HeadersEnum.java](src/main/java/com/app/util/HeadersEnum.java)
 * Build files
