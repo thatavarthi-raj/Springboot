@@ -1,4 +1,4 @@
-package com.app.request.params;
+package com.app.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
