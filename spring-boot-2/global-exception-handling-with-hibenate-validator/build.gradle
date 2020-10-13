@@ -42,7 +42,7 @@ dependencies{
     testAnnotationProcessor "org.projectlombok:lombok:1.18.4"
 }
 
-group = "global-exception-handling"
+group = "global-exception-handling-with-hibenate-validator"
 version = "1.0"
 description = "Spring boot 2 global exception handling"
 

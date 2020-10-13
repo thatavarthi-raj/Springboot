@@ -10,12 +10,6 @@ mvn archetype:generate -DgroupId=global.exception.handling -DartifactId=global-e
 gradle init --type pom
 ```
 
-## Dependencies
-* org.springframework.boot:spring-boot-starter-test
-* org.springframework.boot:spring-boot-starter-web
-* org.projectlombok:lombok:1.18.4
-* org.apache.commons:commons-lang3:3.4
-
 ## Description
 * All errors are in **ErrorsEnum**
 * All constants are in **Constants**
