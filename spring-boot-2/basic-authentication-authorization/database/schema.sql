@@ -1,4 +1,4 @@
-use my_sql_practice;
+use practice;
 
 create table t_client
 (

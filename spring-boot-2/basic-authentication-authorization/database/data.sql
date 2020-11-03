@@ -1,4 +1,4 @@
-use my_sql_practice;
+use practice;
 
 insert into users(username, password, raw_password, enabled) values ('admin', '$2a$10$1EpwTe/coREJzYYm8hG.aO3F2BEm0cGf3IcNn7xGvGIx0xibQe9Fe', 'admin', true);
 insert into users(username, password, raw_password, enabled) values ('user1', '$2a$10$BZv5JH5PCnn.d6nqfYvfce./qJZrGpBYx301QbM0G9MydnmngKyz2', 'user1', true);

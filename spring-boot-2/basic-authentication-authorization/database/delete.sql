@@ -1,4 +1,4 @@
-use my_sql_practice;
+use practice;
 
 delete from t_role_page;
 delete from authorities;

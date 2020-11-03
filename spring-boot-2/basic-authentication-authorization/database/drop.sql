@@ -1,4 +1,4 @@
-use my_sql_practice;
+use practice;
 
 drop table t_role_page;
 drop table authorities;

@@ -1,4 +1,4 @@
-use my_sql_practice;
+use practice;
 
 select * from t_client;
 select * from users;
