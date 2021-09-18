@@ -83,3 +83,16 @@ build
 */logs/*
 /out/
 */out/*
+/bin/
+*/bin/*
+/.settings/
+*/.settings/*
+.classpath
+.factorypath
+.project
+*.iml
+/.gradle/
+*/.gradle/*
+/gradle/
+*/gradle/*
+gradle
