@@ -40,7 +40,7 @@ docker build . -t docker-image-with-docker-file
 docker run -it -p 9081:9080 docker-image-with-docker-file
 ```
 
-## Steps to create image and start the container
+## Docker image with gradle jar
 * Create jar
 ```
 gradlew clean compileJava build
